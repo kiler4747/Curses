@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "BubbleSort\Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\MergeSort.csproj", "{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{A340331B-CCAD-478B-B840-686F001B3BCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Debug|x86.Build.0 = Debug|x86
 		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Release|x86.ActiveCfg = Release|x86
 		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Release|x86.Build.0 = Release|x86
+		{A340331B-CCAD-478B-B840-686F001B3BCA}.Debug|x86.ActiveCfg = Debug|x86
+		{A340331B-CCAD-478B-B840-686F001B3BCA}.Debug|x86.Build.0 = Debug|x86
+		{A340331B-CCAD-478B-B840-686F001B3BCA}.Release|x86.ActiveCfg = Release|x86
+		{A340331B-CCAD-478B-B840-686F001B3BCA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
