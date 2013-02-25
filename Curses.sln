@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "BubbleSort\BubbleSort.csproj", "{D4A53198-1BB4-46D3-8EFE-2A32EED3A6FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\MergeSort.csproj", "{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{D4A53198-1BB4-46D3-8EFE-2A32EED3A6FA}.Debug|x86.Build.0 = Debug|x86
 		{D4A53198-1BB4-46D3-8EFE-2A32EED3A6FA}.Release|x86.ActiveCfg = Release|x86
 		{D4A53198-1BB4-46D3-8EFE-2A32EED3A6FA}.Release|x86.Build.0 = Release|x86
+		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Debug|x86.ActiveCfg = Debug|x86
+		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Debug|x86.Build.0 = Debug|x86
+		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Release|x86.ActiveCfg = Release|x86
+		{0EC0F23C-FFC0-49D6-8EED-6B2AF0D13920}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
