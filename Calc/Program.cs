@@ -9,7 +9,11 @@ namespace Calc
 	{
 		static void Main(string[] args)
 		{
-			string expression = "400^6^2";
+			string expression;
+			//expression = "400(6.6+2)";
+			expression = Console.ReadLine();
+			if (expression == "")
+				return;
 			Calculator calc = new Calculator();
 			Console.WriteLine("{0} = {1:N}",expression,calc.Calculate(expression));
 			Console.ReadLine();
@@ -24,10 +28,11 @@ namespace Calc
 			{
 				currentChar = 0;
 				expression = str.Replace(" ", "");
+				expression = expression.Replace('.', ',');
 				return Plus();
 			}
 
-			double Plus()
+			private double Plus()
 			{
 				double result = Multiplicate();
 				if (currentChar == expression.Length)
@@ -42,13 +47,11 @@ namespace Calc
 						currentChar++;
 						result -= Plus();
 						break;
-					default:
-						break;
 				}
 				return result;
 			}
 
-			double Multiplicate()
+			private double Multiplicate()
 			{
 				double result = Pow();
 				if (currentChar == expression.Length)
@@ -63,15 +66,19 @@ namespace Calc
 						currentChar++;
 						result /= Multiplicate();
 						break;
-					default:
+					case '(':
+						result *= Brackets();
+						break;
+					case ')':
+						currentChar++;
 						break;
 				}
 				return result;
 			}
 
-			double Pow()
+			private double Pow()
 			{
-				double result = digits();
+				double result = Brackets();
 				if (currentChar == expression.Length)
 					return result;
 				if (expression[currentChar] == '^')
@@ -82,14 +89,39 @@ namespace Calc
 				return result;
 			}
 
-			private double digits()
+			private double Brackets()
 			{
-				string number = "";
+				double result = 0;
+				if (expression[currentChar] == '(')
+				{
+					currentChar++;
+					if (expression.LastIndexOf(')') == -1)
+					{
+						Console.WriteLine("Нету закрывающей скобки");
+						return result;
+					}
+					Calculator calc = new Calculator();
+					result = calc.Calculate(expression.Substring(currentChar, expression.LastIndexOf(')') - currentChar));
+					currentChar = expression.LastIndexOf(')') + 1;
+					return result;
+				}
+				if (expression[currentChar] == ')')
+				{
+					currentChar++;
+					Console.WriteLine("Нету открывающей скобки");
+					return result;
+				}
+				return Digits();
+			}
+
+			private double Digits()
+			{
+				string number = "0";
 				while ((expression.Length != currentChar) && (
-					(expression[currentChar] >= '0') && 
-					(expression[currentChar] <= '9') ||
-					(expression[currentChar] == '.') ||
-					expression[currentChar] == ',') )
+																(expression[currentChar] >= '0') &&
+																(expression[currentChar] <= '9') ||
+																(expression[currentChar] == '.') ||
+																expression[currentChar] == ','))
 				{
 					number += expression[currentChar++];
 				}
