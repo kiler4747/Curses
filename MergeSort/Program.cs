@@ -52,11 +52,8 @@ namespace MergeSort
 				right[j] = mass[middle + j+1];
 			
 			i = j = 0;
-			int k;
-			for (k = start; i!= left.Length || j!= right.Length; k++)
+			for (int k = start; i!= left.Length || j!= right.Length; k++)
 			{
-				//if (i != left.Length & j != right.Length)
-				//{
 				if ((i == left.Length) && (j < right.Length))
 					mass[k] = right[j++];
 				else 
@@ -71,27 +68,7 @@ namespace MergeSort
 							mass[k] = right[j++];
 					}
 				}
-
-				//}
-				//else
-				//{
-				//    if (i == left.Length)
-				//        mass[k] = right[j++];
-				//    else
-				//    {
-				//        mass[k] = left[i++];
-				//    }
-				//}
 			}
-			//k--;
-			//if (i == left.Length)
-			//    for (; k < end; k++)
-			//        mass[k] = right[j++];
-			//else
-			//{
-			//    for (; k < end; k++)
-			//        mass[k] = left[i++];
-			//}
 		}
 	}
 }
