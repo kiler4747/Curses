@@ -12,6 +12,7 @@ namespace HugeInt
 		public UHugeInt()
 			: this(0)
 		{
+			digits = null;
 		}
 
 		public UHugeInt(int x)
