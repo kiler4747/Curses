@@ -31,5 +31,8 @@ namespace HugeInt
 		{
 			
 		}
+
+		public UHugeInt(UHugeInt left)
+		{}
 	}
 }
