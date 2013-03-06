@@ -32,6 +32,8 @@ namespace HugeInt
 			
 		}
 
+		public UHugeInt(UHugeInt left)
+		{}
 		public static bool operator ==(UHugeInt left, UHugeInt right)
 		{
 			return true;
