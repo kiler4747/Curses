@@ -16,6 +16,7 @@ namespace HugeInt
 
 		public UHugeInt(int x)
 		{
+			digits = null;
 			string number = x.ToString();
 			int countDigits = x.ToString().Length;
 			digits = new byte[countDigits];
