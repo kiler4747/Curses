@@ -12,12 +12,10 @@ namespace HugeInt
 		public UHugeInt()
 			: this(0)
 		{
-			digits = null;
 		}
 
 		public UHugeInt(uint x)
 		{
-			digits = null;
 			string number = x.ToString();
 			int countDigits = x.ToString().Length;
 			digits = new byte[countDigits];
@@ -35,6 +33,16 @@ namespace HugeInt
 
 		public UHugeInt(UHugeInt left)
 		{}
+
+		public override string ToString()
+		{
+			string number = "";
+			foreach (var digit in digits)
+			{
+				number = digit + number;
+			}
+			return number;
+		}
 
 		public static bool operator ==(UHugeInt left, UHugeInt right)
 		{
