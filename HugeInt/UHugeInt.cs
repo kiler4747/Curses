@@ -21,7 +21,7 @@ namespace HugeInt
 			digits = new byte[countDigits];
 			for (int i = 0; i < number.Length; i++)
 			{
-				digits[i] = byte.Parse((number[i]).ToString());
+				digits[digits.Length - i - 1] = byte.Parse((number[i]).ToString());
 			}
 		}
 
