@@ -123,6 +123,59 @@ namespace HugeInt
 			return returnValue;
 		}
 
+		public static UHugeInt operator -(UHugeInt left, UHugeInt right)
+		{
+			int newSize;
+			if (left.digits.Length >= right.digits.Length)
+				newSize = left.digits.Length;
+			else
+			{
+				newSize = right.digits.Length;
+			}
+			byte[] returnMass = new byte[newSize];
+
+			int i = 0;
+			int p = 0;
+			while (i < left.digits.Length || i < right.digits.Length)
+			{
+				if ((i < left.digits.Length) && (i >= right.digits.Length))
+				{
+					p = (left.digits[i] );
+					//returnMass[i] = (byte)( basis - p);
+					//p -= basis;
+					//i++;
+				}
+				else if ((i >= left.digits.Length) && (i < right.digits.Length))
+				{
+					p = (right.digits[i] );
+					//returnMass[i] = (byte)( basis - p);
+					//p -= basis;
+					//i++;
+				}
+				else
+				{
+
+					p = (left.digits[i] - right.digits[i]);
+				}
+					returnMass[i] = (byte)( p - basis);
+					if (p < 0)
+						returnMass[i + 1]--;
+					i++;
+			}
+
+			i = returnMass.Length - 1;
+			while (returnMass[i] == 0)
+				i--;
+			byte[] cleanReturnMass = new byte[i + 1];
+			for (int j = 0; j < cleanReturnMass.Length; j++)
+			{
+				cleanReturnMass[cleanReturnMass.Length - j - 1] = returnMass[i--];
+			}
+			UHugeInt returnValue = new UHugeInt();
+			returnValue.digits = cleanReturnMass;
+			return returnValue;
+		}
+
 		public static bool operator ==(UHugeInt left, UHugeInt right)
 		{
 			return left.Equals(right);
