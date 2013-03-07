@@ -71,14 +71,7 @@ namespace HugeInt
 
 		public static bool operator ==(UHugeInt left, UHugeInt right)
 		{
-			if (left.digits.Length != right.digits.Length)
-				return false;
-			for (int i = 0; i < left.digits.Length; i++)
-			{
-				if (left.digits[i] != right.digits[i])
-					return false;
-			}
-			return true;
+			return left.Equals(right);
 		}
 
 		public static bool operator ==(UHugeInt left, uint right)
