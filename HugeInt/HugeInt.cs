@@ -39,6 +39,11 @@ namespace HugeInt
 			return 0;
 		}
 
+		public byte this[uint i]
+		{
+			get { return digits[i]; }
+		}
+
 		public bool Equals(HugeInt right)
 		{
 			if (ReferenceEquals(null, right)) return
