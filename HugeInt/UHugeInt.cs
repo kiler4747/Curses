@@ -11,6 +11,10 @@ namespace HugeInt
 
 		protected bool Equals(UHugeInt other)
 		{
+			if (ReferenceEquals(null, other)) 
+				return false;
+			if (ReferenceEquals(this, other)) 
+				return true;
 			if (this.digits.Length != other.digits.Length)
 				return false;
 			for (int i = 0; i < this.digits.Length; i++)
@@ -23,8 +27,6 @@ namespace HugeInt
 
 		public override bool Equals(object obj)
 		{
-			if (ReferenceEquals(null, obj)) return false;
-			if (ReferenceEquals(this, obj)) return true;
 			if (obj.GetType() != this.GetType()) return false;
 			return Equals((UHugeInt) obj);
 		}
