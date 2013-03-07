@@ -7,6 +7,31 @@ namespace HugeInt
 {
 	class UHugeInt
 	{
+		protected bool Equals(UHugeInt other)
+		{
+			if (this.digits.Length != other.digits.Length)
+				return false;
+			for (int i = 0; i < this.digits.Length; i++)
+			{
+				if (this.digits[i] != other.digits[i])
+					return false;
+			}
+			return true;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != this.GetType()) return false;
+			return Equals((UHugeInt) obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return (digits != null ? digits.GetHashCode() : 0);
+		}
+
 		private byte[] digits;
 
 		public UHugeInt()
