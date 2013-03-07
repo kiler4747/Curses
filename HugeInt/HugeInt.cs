@@ -7,6 +7,8 @@ namespace HugeInt
 {
 	class HugeInt : UHugeInt, IComparable
 	{
+		private bool minus = false;
+
 		public int CompareTo(object obj)
 		{
 			HugeInt right = (HugeInt) obj;
