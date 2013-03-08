@@ -44,6 +44,11 @@ namespace HugeInt
 			get { return digits[i]; }
 		}
 
+		public static HugeInt operator ++(HugeInt val)
+		{
+			
+		}
+
 		public bool Equals(HugeInt right)
 		{
 			if (ReferenceEquals(null, right)) return
