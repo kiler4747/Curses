@@ -16,9 +16,9 @@ namespace HugeInt
 				return false;
 			if (ReferenceEquals(this, other)) 
 				return true;
-			if (this.digits.Length != other.digits.Length)
+			if (this.digits.Count != other.digits.Count)
 				return false;
-			for (int i = 0; i < this.digits.Length; i++)
+			for (int i = 0; i < this.digits.Count; i++)
 			{
 				if (this.digits[i] != other.digits[i])
 					return false;
@@ -28,7 +28,12 @@ namespace HugeInt
 
 		public override bool Equals(object obj)
 		{
-			if (obj.GetType() != this.GetType()) return false;
+			if (ReferenceEquals(null, obj))
+				return false;
+			if (ReferenceEquals(this, obj))
+				return true;
+			if (obj.GetType() != this.GetType()) 
+				return false;
 			return Equals((UHugeInt) obj);
 		}
 
@@ -51,10 +56,11 @@ namespace HugeInt
 		public UHugeInt(string str)
 		{
 			digits = new List<byte>();
-			for (int i = 0; i < str.Length; i++)
+			for (int i = str.Length - 1; i <= 0; i++)
 			{
 				digits.Add(byte.Parse(str[i].ToString()));
 			}
+		}
 
 		public override string ToString()
 		{
@@ -69,7 +75,7 @@ namespace HugeInt
 		public static UHugeInt operator +(UHugeInt left, UHugeInt right)
 		{
 			int newSize;
-			if (left.digits.Length >= right.digits.Length)
+			if (left.digits.Count >= right.digits.Count)
 				newSize = left.digits.Length + 1;
 			else
 			{
@@ -193,13 +199,13 @@ namespace HugeInt
 
 		public static bool operator <(UHugeInt left, UHugeInt right)
 		{
-			if (left.digits.Length > right.digits.Length)
+			if (left.digits.Count > right.digits.Count)
 				return false;
 			if (left == right)
 				return false;
-			if (left.digits.Length == right.digits.Length)
+			if (left.digits.Count == right.digits.Count)
 			{
-				for (int i = 0; i < left.digits.Length; i++)
+				for (int i = 0; i < left.digits.Count; i++)
 				{
 					if (left.digits[i] > right.digits[i])
 						return false;
