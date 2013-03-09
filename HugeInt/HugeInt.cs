@@ -7,6 +7,17 @@ namespace HugeInt
 {
 	class HugeInt : UHugeInt, IComparable
 	{
+		public HugeInt()
+			: base()
+		{
+			minus = false;
+		}
+
+		public HugeInt(int x)
+		{
+			
+		}
+
 		public override bool Equals(object obj)
 		{
 			if (ReferenceEquals(null, obj)) return 
