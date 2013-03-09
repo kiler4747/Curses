@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Berry.cs" />
     <Compile Include="IEat.cs" />
     <Compile Include="Mushroom.cs" />
     <Compile Include="Program.cs" />
