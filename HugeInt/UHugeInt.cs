@@ -56,7 +56,7 @@ namespace HugeInt
 		public UHugeInt(string str)
 		{
 			digits = new List<byte>();
-			for (int i = str.Length - 1; i <= 0; i++)
+			for (int i = str.Length - 1; i >= 0; i--)
 			{
 				digits.Add(byte.Parse(str[i].ToString()));
 			}
@@ -116,56 +116,47 @@ namespace HugeInt
 			return returnValue;
 		}
 
+		static IList<byte> Minus(UHugeInt left, UHugeInt right)
+		{
+			IList<byte> returnValue = new List<byte>();
+			for (int i = 0; i < left.digits.Count || i < right.digits.Count; i++)
+			{
+				if (i < left.digits.Count && i >= right.digits.Count)
+					returnValue.Add(left[i]);
+				else if (i < right.digits.Count && i >= left.digits.Count)
+					returnValue.Add(right[i]);
+				else
+					returnValue.Add((byte)(left[i] - right[i]));
+			}
+			return returnValue;
+		}
+
+		static IList<byte> Overflow(IList<byte> inputList)
+		{
+			byte p = 0;
+			for (int i = 0; i < inputList.Count; i++)
+			{
+				if (inputList[i] > basis)
+				{
+					inputList[i] += basis;
+					inputList[i + 1]--;
+				}
+				//inputList[i] -= p;
+				//p = (byte)((inputList[i] + basis) / basis);
+				//inputList[i] %= basis;
+			}
+			//if (p != 0)
+			//{
+			//    inputList.Add(p);
+			//}
+			return inputList;
+		}
+
 		public static UHugeInt operator -(UHugeInt left, UHugeInt right)
 		{
-			int newSize;
-			if (left.digits.Length >= right.digits.Length)
-				newSize = left.digits.Length;
-			else
-			{
-				newSize = right.digits.Length;
-			}
-			byte[] returnMass = new byte[newSize];
-
-			int i = 0;
-			int p = 0;
-			while (i < left.digits.Length || i < right.digits.Length)
-			{
-				if ((i < left.digits.Length) && (i >= right.digits.Length))
-				{
-					p = (left.digits[i] );
-					//returnMass[i] = (byte)( basis - p);
-					//p -= basis;
-					//i++;
-				}
-				else if ((i >= left.digits.Length) && (i < right.digits.Length))
-				{
-					p = (right.digits[i] );
-					//returnMass[i] = (byte)( basis - p);
-					//p -= basis;
-					//i++;
-				}
-				else
-				{
-
-					p = (left.digits[i] - right.digits[i]);
-				}
-					returnMass[i] = (byte)( p - basis);
-					if (p < 0)
-						returnMass[i + 1]--;
-					i++;
-			}
-
-			i = returnMass.Length - 1;
-			while (returnMass[i] == 0)
-				i--;
-			byte[] cleanReturnMass = new byte[i + 1];
-			for (int j = 0; j < cleanReturnMass.Length; j++)
-			{
-				cleanReturnMass[cleanReturnMass.Length - j - 1] = returnMass[i--];
-			}
 			UHugeInt returnValue = new UHugeInt();
-			returnValue.digits = cleanReturnMass;
+			returnValue.digits = (List<byte>)Minus(left, right);
+			Overflow(returnValue.digits);
 			return returnValue;
 		}
 
