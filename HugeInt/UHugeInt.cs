@@ -72,6 +72,11 @@ namespace HugeInt
 			return number;
 		}
 
+		public byte this[int i]
+		{
+			get { return digits[i]; }
+		}
+
 		public static UHugeInt operator +(UHugeInt left, UHugeInt right)
 		{
 			int newSize;
