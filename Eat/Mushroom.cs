@@ -29,5 +29,10 @@ namespace Eat
 				return true;
 			return false;
 		}
+
+		public override string ToString()
+		{
+			return mushroom.ToString();
+		}
 	}
 }

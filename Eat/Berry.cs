@@ -27,5 +27,10 @@ namespace Eat
 				return true;
 			return false;
 		}
+
+		public override string ToString()
+		{
+			return berry.ToString();
+		}
 	}
 }
