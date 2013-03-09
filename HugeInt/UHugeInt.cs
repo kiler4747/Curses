@@ -5,10 +5,10 @@ using System.Text;
 
 namespace HugeInt
 {
-	class UHugeInt
+	class UHugeInt : IComparable
 	{
 		private const int basis = 10;
-		private List<byte> digits;
+		private IList<byte> digits;
 
 		protected bool Equals(UHugeInt other)
 		{
@@ -40,6 +40,18 @@ namespace HugeInt
 		public override int GetHashCode()
 		{
 			return (digits != null ? digits.GetHashCode() : 0);
+		}
+
+		public int CompareTo(object obj)
+		{
+			UHugeInt right = (UHugeInt)obj;
+			if (right == null)
+				return 1;
+			if (this < right)
+				return -1;
+			if (this > right)
+				return 1;
+			return 0;
 		}
 
 
@@ -80,7 +92,7 @@ namespace HugeInt
 		static IList<byte> Plus(UHugeInt left, UHugeInt right)
 		{
 			IList<byte> returnValue = new List<byte>();
-			for (int i = 0; i <= left.digits.Count || i <= right.digits.Count; i++)
+			for (int i = 0; i < left.digits.Count || i < right.digits.Count; i++)
 			{
 				if (i < left.digits.Count && i >= right.digits.Count)
 					returnValue.Add(left[i]);
@@ -92,7 +104,7 @@ namespace HugeInt
 			return returnValue;
 		}
 
-		static IList<byte> Overwrite(IList<byte> inputList)
+		static IList<byte> OverflowPlus(IList<byte> inputList)
 		{
 			byte p = 0;
 			for (int i = 0; i < inputList.Count; i++)
@@ -112,7 +124,7 @@ namespace HugeInt
 		{
 			UHugeInt returnValue = new UHugeInt();
 			returnValue.digits = (List<byte>) Plus(left, right);
-			Overwrite(returnValue.digits);
+			OverflowPlus(returnValue.digits);
 			return returnValue;
 		}
 
@@ -131,7 +143,7 @@ namespace HugeInt
 			return returnValue;
 		}
 
-		static IList<byte> Overflow(IList<byte> inputList)
+		static IList<byte> OverflowMinus(IList<byte> inputList)
 		{
 			byte p = 0;
 			for (int i = 0; i < inputList.Count; i++)
@@ -156,7 +168,7 @@ namespace HugeInt
 		{
 			UHugeInt returnValue = new UHugeInt();
 			returnValue.digits = (List<byte>)Minus(left, right);
-			Overflow(returnValue.digits);
+			OverflowMinus(returnValue.digits);
 			return returnValue;
 		}
 
