@@ -8,6 +8,7 @@ namespace HugeInt
 	class UHugeInt
 	{
 		private const int basis = 10;
+		private List<byte> digits;
 
 		protected bool Equals(UHugeInt other)
 		{
@@ -36,32 +37,24 @@ namespace HugeInt
 			return (digits != null ? digits.GetHashCode() : 0);
 		}
 
-		private byte[] digits;
 
 		public UHugeInt()
-			: this(0)
+			: this("0")
 		{
 		}
 
 		public UHugeInt(uint x)
+			:this(x.ToString())
 		{
-			string number = x.ToString();
-			int countDigits = x.ToString().Length;
-			digits = new byte[countDigits];
-			for (int i = 0; i < number.Length; i++)
-			{
-				digits[digits.Length - i - 1] = byte.Parse((number[i]).ToString());
-			}
 		}
 
 		public UHugeInt(string str)
-			: this(uint.Parse(str))
 		{
-			
-		}
-
-		public UHugeInt(UHugeInt left)
-		{}
+			digits = new List<byte>();
+			for (int i = 0; i < str.Length; i++)
+			{
+				digits.Add(byte.Parse(str[i].ToString()));
+			}
 
 		public override string ToString()
 		{
