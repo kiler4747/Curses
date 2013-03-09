@@ -7,7 +7,7 @@ namespace Eat
 {
 	class Mushroom : IEat
 	{
-		enum Mushrooms
+		public enum Mushrooms
 		{
 			Amanita,
 			Champignon,
@@ -16,7 +16,7 @@ namespace Eat
 
 		private Mushrooms mushroom;
 
-		Mushroom(Mushrooms mush)
+		public Mushroom(Mushrooms mush)
 		{
 			mushroom = mush;
 		}
