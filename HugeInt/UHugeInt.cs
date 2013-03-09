@@ -77,55 +77,42 @@ namespace HugeInt
 			get { return digits[i]; }
 		}
 
+		static IList<byte> Plus(UHugeInt left, UHugeInt right)
+		{
+			IList<byte> returnValue = new List<byte>();
+			for (int i = 0; i <= left.digits.Count || i <= right.digits.Count; i++)
+			{
+				if (i < left.digits.Count && i >= right.digits.Count)
+					returnValue.Add(left[i]);
+				if (i < right.digits.Count && i >= left.digits.Count)
+					returnValue.Add(right[i]);
+				else
+					returnValue.Add((byte)(left[i] + right[i]));
+			}
+			return returnValue;
+		}
+
+		static IList<byte> Overwrite(IList<byte> inputList)
+		{
+			byte p = 0;
+			for (int i = 0; i < inputList.Count; i++)
+			{
+				inputList[i] += p;
+				p = (byte)(inputList[i]/basis);
+				inputList[i] %= basis;
+			}
+			if (p != 0)
+			{
+				inputList.Add(p);
+			}
+			return inputList;
+		}
+
 		public static UHugeInt operator +(UHugeInt left, UHugeInt right)
 		{
-			int newSize;
-			if (left.digits.Count >= right.digits.Count)
-				newSize = left.digits.Length + 1;
-			else
-			{
-				newSize = right.digits.Length + 1;
-			}
-			byte[] returnMass = new byte[newSize];
-
-			int i = 0;
-			byte p = 0;
-			while (i < left.digits.Length || i < right.digits.Length)
-			{
-				if ((i < left.digits.Length) && (i >= right.digits.Length))
-				{
-					p = (byte) (left.digits[i] + p);
-					returnMass[i] = (byte) (p%basis);
-					p -= returnMass[i];
-					i++;
-				}
-				else if ((i >= left.digits.Length) && (i < right.digits.Length))
-				{
-					p = (byte) (right.digits[i] + p);
-					returnMass[i] = (byte) (p%basis);
-					p -= returnMass[i];
-					i++;
-				}
-				else
-				{
-
-					p = (byte) (left.digits[i] + right.digits[i] + p);
-					returnMass[i] = (byte) (p%basis);
-					p /= basis;
-					i++;
-				}
-			}
-
-			i = returnMass.Length - 1;
-			while (returnMass[i] == 0) 
-				i--;
-			byte[] cleanReturnMass = new byte[i+1];
-			for (int j = 0; j < cleanReturnMass.Length; j++)
-			{
-				cleanReturnMass[cleanReturnMass.Length - j - 1] = returnMass[i--];
-			}
 			UHugeInt returnValue = new UHugeInt();
-			returnValue.digits = cleanReturnMass;
+			returnValue.digits = (List<byte>) Plus(left, right);
+			Overwrite(returnValue.digits);
 			return returnValue;
 		}
 
