@@ -24,7 +24,7 @@ namespace HugeInt
 			digits = new List<byte>();
 			for (int i = 0; i < str.Length; i++)
 			{
-				digits.Add(byte.Parse(str[i].ToString()));
+				digits.Add((byte)(str[i] - '0'));
 			}
 		}
 	}
