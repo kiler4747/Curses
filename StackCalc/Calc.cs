@@ -44,6 +44,13 @@ namespace StackCalck
 			}
 		}
 
+		static public double Calculate(string input)
+		{
+			string output = GetExpression(input);
+			double result = Counting(output);
+			return result;
+		}
+
 		static string GetExpression(string input)
 		{
 			string output = "";
