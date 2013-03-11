@@ -36,5 +36,12 @@ namespace StackCalck
 		{
 			get { return head == null; }
 		}
+
+		public T Peek()
+		{
+			if (head == null)
+				throw new NullReferenceException("Stack is empty");
+			return head.Data;
+		}
 	}
 }
