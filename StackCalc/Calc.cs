@@ -94,5 +94,54 @@ namespace StackCalck
 			}
 			return output;
 		}
+
+		static double Counting(string input)
+		{
+			double result = 0;
+			Stack<double> tmp = new Stack<double>();
+
+			for (int i = 0; i < input.Length; i++)
+			{
+				if (char.IsDigit(input[i]))
+				{
+					string a = "";
+					while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
+					{
+						a += input[i];
+						i++;
+						if (i == input.Length)
+							break;
+					}
+					tmp.Push(double.Parse(a));
+					i--;
+				}
+				if (IsOperator(input[i]))
+				{
+					double a = tmp.Pop();
+					double b = tmp.Pop();
+
+					switch (input[i])
+					{
+						case '+':
+							result = a + b;
+							break;
+						case '-':
+							result = a - b;
+							break;
+						case '*':
+							result = a * b;
+							break;
+						case '/':
+							result = a / b;
+							break;
+						case '^':
+							result = Math.Pow(b, a);
+							break;
+					}
+					tmp.Push(result);
+				}
+			}
+			return tmp.Peek();
+		}
 	}
 }
