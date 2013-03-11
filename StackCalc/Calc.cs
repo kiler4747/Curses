@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace StackCalck
 {
@@ -53,24 +54,31 @@ namespace StackCalck
 
 		static string GetExpression(string input)
 		{
-			string output = "";
+			StringBuilder output = new StringBuilder();
 			Stack<char> operStack = new Stack<char>();
 
 			for (int i = 0; i < input.Length; i++)
 			{
 				if (IsDelimeter(input[i]))
 					continue;
+				if (input[i] == '-' && ((i > 0 && !char.IsDigit(input[i - 1])) || i == 0))
+				{
+					output.Append('-');
+					i++;
+				}
 				if (char.IsDigit(input[i]))
 				{
 					while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
 					{
-						output += input[i];
+						output.Append(input[i]);
 						i++;
 						if (i == input.Length)
+						{
+							i--;
 							break;
+						}
 					}
-					i--;
-					output += ' ';
+					output.Append(' ');
 				}
 
 				if (IsOperator(input[i]))
@@ -82,7 +90,7 @@ namespace StackCalck
 						char s = operStack.Pop();
 						while (s != '(')
 						{
-							output += s.ToString() + ' ';
+							output.Append(s.ToString() + ' ');
 							s = operStack.Pop();
 						}
 					}
@@ -90,16 +98,16 @@ namespace StackCalck
 					{
 						if (!operStack.IsEmpty)
 							if (GetPriority(input[i]) <= GetPriority(operStack.Peek()))
-								output += operStack.Pop().ToString() + ' ';
+								output.Append(operStack.Pop().ToString() + ' ');
 						operStack.Push(input[i]);
 					}
 				}
 			}
 			while (!operStack.IsEmpty)
 			{
-				output += operStack.Pop().ToString() + ' ';
+				output.Append(operStack.Pop().ToString() + ' ');
 			}
-			return output;
+			return output.ToString();
 		}
 
 		static double Counting(string input)
@@ -109,19 +117,27 @@ namespace StackCalck
 
 			for (int i = 0; i < input.Length; i++)
 			{
-				if (char.IsDigit(input[i]))
+				int index = input.IndexOf(' ', i);
+				string tempStr = input.Substring(i, index - i);
+				double oper = 0;
+				if (double.TryParse(tempStr, out oper))
 				{
-					string a = "";
-					while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
-					{
-						a += input[i];
-						i++;
-						if (i == input.Length)
-							break;
-					}
-					tmp.Push(double.Parse(a));
-					i--;
+					tmp.Push(oper);
+					i = index;
 				}
+				//if (char.IsDigit(input[i]))
+				//{
+				//	string a = "";
+				//	while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
+				//	{
+				//		a += input[i];
+				//		i++;
+				//		if (i == input.Length)
+				//			break;
+				//	}
+				//	tmp.Push(double.Parse(a));
+				//	i--;
+				//}
 				if (IsOperator(input[i]))
 				{
 					double b = tmp.Pop();
