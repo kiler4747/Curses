@@ -82,7 +82,7 @@ namespace StackCalck
 						char s = operStack.Pop();
 						while (s != '(')
 						{
-							output += s + ' ';
+							output += s.ToString() + ' ';
 							s = operStack.Pop();
 						}
 					}
@@ -90,14 +90,14 @@ namespace StackCalck
 					{
 						if (!operStack.IsEmpty)
 							if (GetPriority(input[i]) <= GetPriority(operStack.Peek()))
-								output += operStack.Pop() + ' ';
+								output += operStack.Pop().ToString() + ' ';
 						operStack.Push(input[i]);
 					}
 				}
 			}
 			while (!operStack.IsEmpty)
 			{
-				output += operStack.Pop() + ' ';
+				output += operStack.Pop().ToString() + ' ';
 			}
 			return output;
 		}
@@ -124,8 +124,8 @@ namespace StackCalck
 				}
 				if (IsOperator(input[i]))
 				{
-					double a = tmp.Pop();
 					double b = tmp.Pop();
+					double a = tmp.Pop();
 
 					switch (input[i])
 					{
