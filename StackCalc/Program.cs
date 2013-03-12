@@ -10,9 +10,13 @@ namespace StackCalck
 	{
 		static void Main(string[] args)
 		{
-			string input = Console.ReadLine();
-			Console.WriteLine(Calc.Calculate(input));
-			Console.ReadLine();
+			while (true)
+			{
+
+				string input = Console.ReadLine();
+				Console.WriteLine(Calc.Calculate(input));
+				Console.ReadLine();
+			}
 		}
 	}
 }

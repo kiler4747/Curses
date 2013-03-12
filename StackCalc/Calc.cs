@@ -9,12 +9,15 @@ namespace StackCalck
 {
 	class Calc
 	{
-		static bool IsOperator(char c)
+		static bool IsOperator(string c)
 		{
-			if (("+-*/^()".IndexOf(c)) != -1)
-				return true;
-			return false;
+			return opeartors.Contains(c);
+			//if (opeartors.Contains(c))
+			//	return true;
+			//return false;
 		}
+
+		static readonly string[] opeartors = new[] { "+", "-", "*", "/", "(", ")" };
 
 		static bool IsDelimeter(char c)
 		{
@@ -23,22 +26,22 @@ namespace StackCalck
 			return false;
 		}
 
-		static byte GetPriority(char c)
+		static byte GetPriority(string c)
 		{
 			switch (c)
 			{
-				case '(':
+				case "(":
 					return 0;
-				case ')':
+				case ")":
 					return 1;
-				case '+':
+				case "+":
 					return 2;
-				case '-':
+				case "-":
 					return 3;
-				case '*':
-				case '/':
+				case "*":
+				case "/":
 					return 4;
-				case '^':
+				case "^":
 					return 5;
 				default:
 					return 6;
@@ -47,30 +50,33 @@ namespace StackCalck
 
 		static public double Calculate(string input)
 		{
-			string output = GetExpression(input);
+			IEnumerable<string> output = GetExpression(input);
 			double result = Counting(output);
 			return result;
 		}
 
-		static string GetExpression(string input)
+		static IEnumerable<string> GetExpression(string input)
 		{
-			StringBuilder output = new StringBuilder();
-			Stack<char> operStack = new Stack<char>();
+			var outputs = new List<string>();
+			var operStack = new Stack<string>();
 
 			for (int i = 0; i < input.Length; i++)
 			{
+				string output = "";
+
 				if (IsDelimeter(input[i]))
 					continue;
+
 				if (input[i] == '-' && ((i > 0 && !char.IsDigit(input[i - 1])) || i == 0))
 				{
-					output.Append('-');
+					output += '-';
 					i++;
 				}
 				if (char.IsDigit(input[i]))
 				{
-					while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
+					while (char.IsDigit(input[i]) || (input[i] == ',') || (input[i] == '.'))
 					{
-						output.Append(input[i]);
+						output += input[i];
 						i++;
 						if (i == input.Length)
 						{
@@ -78,52 +84,64 @@ namespace StackCalck
 							break;
 						}
 					}
-					output.Append(' ');
+					//output.Append(' ');
+					outputs.Add(output);
+					output = "";
 				}
 
-				if (IsOperator(input[i]))
+				if (char.IsSymbol(input[i]) || IsOperator(input[i].ToString()))
 				{
-					if (input[i] == '(')
-						operStack.Push(input[i]);
-					else if (input[i] == ')')
+					while (char.IsLetter(input[i]) || !IsOperator(input[i].ToString())) ;
 					{
-						char s = operStack.Pop();
-						while (s != '(')
-						{
-							output.Append(s.ToString() + ' ');
-							s = operStack.Pop();
-						}
+						output += input[i];
+						i++;
 					}
-					else
+					i--;
+					if (IsOperator(output))
 					{
-						if (!operStack.IsEmpty)
-							if (GetPriority(input[i]) <= GetPriority(operStack.Peek()))
-								output.Append(operStack.Pop().ToString() + ' ');
-						operStack.Push(input[i]);
+						if (output == "(")
+							operStack.Push(output);
+						else if (input[i] == ')')
+						{
+							string s = operStack.Pop();
+							while (s != "(")
+							{
+								outputs.Add(s);
+								s = operStack.Pop();
+							}
+						}
+						else
+						{
+							if (!operStack.IsEmpty)
+								if (GetPriority(output) <= GetPriority(operStack.Peek()))
+									outputs.Add(operStack.Pop());
+							operStack.Push(output);
+						}
 					}
 				}
 			}
 			while (!operStack.IsEmpty)
 			{
-				output.Append(operStack.Pop().ToString() + ' ');
+				outputs.Add(operStack.Pop());
 			}
-			return output.ToString();
+			return outputs;
 		}
 
-		static double Counting(string input)
+		static double Counting(IEnumerable<string> input)
 		{
 			double result = 0;
 			Stack<double> tmp = new Stack<double>();
 
-			for (int i = 0; i < input.Length; i++)
+			var enumerable = input as IList<string> ?? input.ToList();
+			for (int i = 0; i < enumerable.Count(); i++)
 			{
-				int index = input.IndexOf(' ', i);
-				string tempStr = input.Substring(i, index - i);
+				//int index = input.IndexOf(' ', i);
+				//string tempStr = input.Substring(i, index - i);
 				double oper = 0;
-				if (double.TryParse(tempStr, out oper))
+				if (double.TryParse(enumerable[i], out oper))
 				{
 					tmp.Push(oper);
-					i = index;
+					//i = index;
 				}
 				//if (char.IsDigit(input[i]))
 				//{
@@ -138,26 +156,26 @@ namespace StackCalck
 				//	tmp.Push(double.Parse(a));
 				//	i--;
 				//}
-				if (IsOperator(input[i]))
+				if (IsOperator(enumerable[i]))
 				{
 					double b = tmp.Pop();
 					double a = tmp.Pop();
 
-					switch (input[i])
+					switch (enumerable[i])
 					{
-						case '+':
+						case "+":
 							result = a + b;
 							break;
-						case '-':
+						case "-":
 							result = a - b;
 							break;
-						case '*':
+						case "*":
 							result = a * b;
 							break;
-						case '/':
+						case "/":
 							result = a / b;
 							break;
-						case '^':
+						case "^":
 							result = Math.Pow(b, a);
 							break;
 					}
