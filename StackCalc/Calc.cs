@@ -14,7 +14,7 @@ namespace StackCalck
 			return opeartors.Contains(c);
 		}
 
-		static readonly string[] opeartors = new[] { "+", "-", "*", "/", "^", "(", ")" };
+		static readonly string[] opeartors = new[] { "+", "-", "*", "/", "^", "(", ")", "sin", "cos", "tan", "asin", "acos", "atan" };
 
 		static bool IsDelimeter(char c)
 		{
@@ -40,8 +40,15 @@ namespace StackCalck
 					return 4;
 				case "^":
 					return 5;
-				default:
+				case "sin":
+				case "cos":
+				case "tan":
+				case "asin":
+				case "acos":
+				case "atan":
 					return 6;
+				default:
+					return 7;
 			}
 		}
 
@@ -70,7 +77,7 @@ namespace StackCalck
 				}
 				if (char.IsDigit(input[i]))
 				{
-					while (char.IsDigit(input[i]) || (input[i] == ',') || (input[i] == '.'))
+					while (char.IsDigit(input[i]) || (input[i] == CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator[0]))
 					{
 						output += input[i];
 						i++;
@@ -151,25 +158,57 @@ namespace StackCalck
 				}
 				if (IsOperator(enumerable[i]))
 				{
-					double b = tmp.Pop();
-					double a = tmp.Pop();
-
+					double a, b;
 					switch (enumerable[i])
 					{
 						case "+":
+							b = tmp.Pop();
+							a = tmp.Pop();
 							result = a + b;
 							break;
 						case "-":
+							b = tmp.Pop();
+							a = tmp.Pop();
 							result = a - b;
 							break;
 						case "*":
+							b = tmp.Pop();
+							a = tmp.Pop();
 							result = a * b;
 							break;
 						case "/":
+							b = tmp.Pop();
+							a = tmp.Pop();
 							result = a / b;
 							break;
 						case "^":
+							b = tmp.Pop();
+							a = tmp.Pop();
 							result = Math.Pow(a, b);
+							break;
+						case "sin":
+							a = tmp.Pop();
+							result = Math.Sin(a);
+							break;
+						case "asin":
+							a = tmp.Pop();
+							result = Math.Asin(a);
+							break;
+						case "cos":
+							a = tmp.Pop();
+							result = Math.Cos(a);
+							break;
+						case "acos":
+							a = tmp.Pop();
+							result = Math.Acos(a);
+							break;
+						case "tan":
+							a = tmp.Pop();
+							result = Math.Tan(a);
+							break;
+						case "atan":
+							a = tmp.Pop();
+							result = Math.Atan(a);
 							break;
 					}
 					tmp.Push(result);
