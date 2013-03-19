@@ -30,7 +30,12 @@ namespace Race
 
 		public void Move(uint timeMove)
 		{
-			distance += (double) speed/3600 * timeMove;
+			Random rn = new Random();
+			if (rn.Next(3) == 0)
+				speed+=1;
+			else
+				speed-=1;
+			distance += (double) speed * timeMove;
 		}
 	}
 }
