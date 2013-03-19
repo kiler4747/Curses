@@ -10,6 +10,7 @@ namespace Race
 	{
 		private int speed;
 		private double distance;
+		
 
 		public Car(int speed)
 		{
@@ -30,11 +31,8 @@ namespace Race
 
 		public void Move(uint timeMove)
 		{
-			Random rn = new Random();
-			if (rn.Next(3) == 0)
-				speed+=1;
-			else
-				speed-=1;
+			
+			
 			distance += (double) speed * timeMove;
 		}
 	}

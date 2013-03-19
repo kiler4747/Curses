@@ -10,9 +10,9 @@ namespace Race
 	{
 		static void Main(string[] args)
 		{
-			var checkpoints = new List<int> {1, 6, 21, 29, 34};
+			var checkpoints = new List<int> {10, 16, 27, 39, 54, 75, 89};
 
-			var cars = new List<Car> {new Car(3), new Car(3)};
+			var cars = new List<Car> {new Car(5), new Car(5)};
 
 			Road road = new Road(checkpoints, cars);
 			road.Checkpoint += (sender, eventArgs) => { Console.WriteLine("Checkpoint is {0}", eventArgs.NumberCar); };
