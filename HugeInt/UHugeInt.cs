@@ -8,7 +8,7 @@ namespace HugeInt
 	class UHugeInt : IComparable
 	{
 		private const int basis = 10;
-		private IList<byte> digits;
+		private IList<uint> digits;
 
 		protected bool Equals(UHugeInt other)
 		{
@@ -67,7 +67,7 @@ namespace HugeInt
 
 		public UHugeInt(string str)
 		{
-			digits = new List<byte>();
+			digits = new List<uint>();
 			for (int i = str.Length - 1; i >= 0; i--)
 			{
 				digits.Add((byte)(str[i] - '0'));
@@ -84,27 +84,63 @@ namespace HugeInt
 			return number;
 		}
 
-		public byte this[int i]
+		public uint this[int i]
 		{
 			get { return digits[i]; }
 		}
 
-		static IList<byte> Plus(UHugeInt left, UHugeInt right)
+		static IList<uint> Plus(IList<uint> left, IList<uint> right)
 		{
-			IList<byte> returnValue = new List<byte>();
-			for (int i = 0; i < left.digits.Count || i < right.digits.Count; i++)
+			if (left == null) throw new ArgumentNullException("left");
+			if (right == null) throw new ArgumentNullException("right");
+
+			IList<uint> returnValue = new List<uint>();
+			for (int i = 0; i < left.Count || i < right.Count; i++)
 			{
-				if (i < left.digits.Count && i >= right.digits.Count)
+				if (i < left.Count && i >= right.Count)
+				{
 					returnValue.Add(left[i]);
-				if (i < right.digits.Count && i >= left.digits.Count)
+					continue;
+				}
+				if (i < right.Count && i >= left.Count)
+				{
 					returnValue.Add(right[i]);
-				else
-					returnValue.Add((byte)(left[i] + right[i]));
+					continue;
+				}
+				returnValue.Add((byte)(left[i] + right[i]));
 			}
 			return returnValue;
 		}
 
-		static IList<byte> OverflowPlus(IList<byte> inputList)
+		static List<uint> Multiplicate(IList<uint> left, uint right)
+		{
+			IList<uint> returnValue = new List<uint>();
+			//for (int i = 0; i < right.Count; i++)
+			//{
+				for (int i = 0; i < left.Count; i++)
+				{
+					returnValue.Add((byte) (left[i]*right));
+				}
+				//OverflowPlus(returnValue);
+			//}
+			return (List<uint>)returnValue;
+		}
+
+		public static UHugeInt operator *(UHugeInt left, UHugeInt right)
+		{
+			List<uint> returnValue = new List<uint>();
+			for (int i = right.digits.Count - 1; i >=0; i--)
+			{
+				List<uint> tempList = Multiplicate(left.digits, right.digits[i]);
+				returnValue = (List<uint>)Plus(tempList, returnValue);
+				if (i > 0)
+					returnValue.Insert(0, 0);
+			}
+			OverflowPlus(returnValue);
+			return new UHugeInt(){digits = returnValue};
+		}
+
+		static IList<uint> OverflowPlus(IList<uint> inputList)
 		{
 			byte p = 0;
 			for (int i = 0; i < inputList.Count; i++)
@@ -123,14 +159,14 @@ namespace HugeInt
 		public static UHugeInt operator +(UHugeInt left, UHugeInt right)
 		{
 			UHugeInt returnValue = new UHugeInt();
-			returnValue.digits = (List<byte>) Plus(left, right);
+			returnValue.digits = Plus(left.digits, right.digits);
 			OverflowPlus(returnValue.digits);
 			return returnValue;
 		}
 
-		static IList<byte> Minus(UHugeInt left, UHugeInt right)
+		static IList<uint> Minus(UHugeInt left, UHugeInt right)
 		{
-			IList<byte> returnValue = new List<byte>();
+			IList<uint> returnValue = new List<uint>();
 			for (int i = 0; i < left.digits.Count || i < right.digits.Count; i++)
 			{
 				if (i < left.digits.Count && i >= right.digits.Count)
@@ -143,7 +179,7 @@ namespace HugeInt
 			return returnValue;
 		}
 
-		static IList<byte> OverflowMinus(IList<byte> inputList)
+		static IList<uint> OverflowMinus(IList<uint> inputList)
 		{
 			byte p = 0;
 			for (int i = 0; i < inputList.Count; i++)
@@ -167,7 +203,7 @@ namespace HugeInt
 		public static UHugeInt operator -(UHugeInt left, UHugeInt right)
 		{
 			UHugeInt returnValue = new UHugeInt();
-			returnValue.digits = (List<byte>)Minus(left, right);
+			returnValue.digits = (List<uint>)Minus(left, right);
 			OverflowMinus(returnValue.digits);
 			return returnValue;
 		}
