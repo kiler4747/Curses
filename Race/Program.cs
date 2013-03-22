@@ -8,6 +8,7 @@ namespace Race
 {
 	internal class Program
 	{
+		private static bool wait = true;
 		private static void Main(string[] args)
 		{
 			//Console.BufferWidth
@@ -32,9 +33,10 @@ namespace Race
 								{
 									Console.WriteLine("Finish is {0}", eventArgs.NumberCar);
 									Console.ReadLine();
+									wait = false;
 								};
 			road.Start();
-			while (true) ;
+			while (wait) ;
 		}
 
 		private static IList<int> StringToList(string str)
