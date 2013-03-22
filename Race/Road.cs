@@ -17,10 +17,10 @@ namespace Race
 		private double timeSec = 1;
 
 
-		public delegate void checkpoints(object sender, CheckpointEventArgs e);
+		public delegate void Checkpoints(object sender, CheckpointEventArgs e);
 
-		public event checkpoints Checkpoint;
-		public event checkpoints Finish;
+		public event Checkpoints Checkpoint;
+		public event Checkpoints Finish;
 
 		public void OnCheckpoint(int numberCar)
 		{
@@ -37,7 +37,9 @@ namespace Race
 		Road()
 		{
 			timer = new Timer(timeSec * 1000);
-			timer.Elapsed += timer_Elapsed;
+			timer.Elapsed += TimerElapsed;
+			checkpoint = new List<int>();
+			nextChekpointCars = new List<int>();
 		}
 
 		public Road(List<int> checkpoints, List<Car> cars)
@@ -46,21 +48,19 @@ namespace Race
 			if (checkpoints == null) throw new ArgumentNullException("checkpoints");
 			if (cars == null) throw new ArgumentNullException("cars");
 
-			this.checkpoint = new List<int>();
 			checkpoint.Add(checkpoints[0]);
 			for (int i = 1; i < checkpoints.Count; i++ )
 				checkpoint.Add(checkpoints[i] + checkpoint.Last());
 			this.cars = cars;
-			nextChekpointCars = new List<int>();
 			for (int i = 0; i < cars.Count; i++)
 				nextChekpointCars.Add(0);
+
 			PrintRoad();
 		}
 
 		void PrintRoad()
 		{
 			startLine = Console.CursorTop;
-			int currentLine = 0;
 			Console.Write('|');
 			int prevPersentCheckpoint = 0;
 			foreach (int t in checkpoint)
@@ -70,30 +70,26 @@ namespace Race
 				PrintProgressPersentage(persentChekcpointI);
 				Console.Write('|');
 			}
-			for (int i = 0; i < cars.Count; i++)
-				Console.WriteLine();
 		}
 
 		int CalculatePersantage(double currentNumber, double maxNumber)
 		{
-			// ReSharper disable PossibleLossOfFraction
 			return (int)(currentNumber / maxNumber * 100d);
-			// ReSharper restore PossibleLossOfFraction
 		}
 
-		void PrintProgressPersentage(int value)
+		void PrintProgressPersentage(int value, char symbol = '-')
 		{
-			int width = Console.BufferWidth;
+			int width = Console.BufferWidth - 1;
 			int newWidth = (int)((width * value) / 100d);
 			int currentLine = 0;
 			while (currentLine + 1 < newWidth)
 			{
-				Console.Write('–');
+				Console.Write(symbol);
 				currentLine++;
 			}
 		}
 
-		void PringProgress(int numberCar)
+		void PringProgressCar(int numberCar)
 		{
 			int curTop = Console.CursorTop;
 			Console.CursorVisible = false;
@@ -107,7 +103,7 @@ namespace Race
 			Console.CursorVisible = true;
 		}
 
-		private void timer_Elapsed(object sender, ElapsedEventArgs e)
+		private void TimerElapsed(object sender, ElapsedEventArgs e)
 		{
 			timer.Stop();
 			Random rn = new Random();
@@ -121,7 +117,7 @@ namespace Race
 				if (cars[i].Speed <= 0)
 					cars[i].Speed = 0;
 				cars[i].Move(1);
-				PringProgress(i);
+				PringProgressCar(i);
 
 				while (cars[i].Distance >= checkpoint[nextChekpointCars[i]])
 					if (checkpoint.Count - 1 == nextChekpointCars[i])
@@ -140,8 +136,8 @@ namespace Race
 
 		public void Start()
 		{
+			Console.CursorTop += cars.Count;
 			timer.Start();
-			Console.CursorTop += 2;
 		}
 	}
 }

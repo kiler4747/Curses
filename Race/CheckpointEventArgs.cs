@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Race
 {
-	class CheckpointEventArgs
+	class CheckpointEventArgs : EventArgs
 	{
 		private int numberCar;
 
