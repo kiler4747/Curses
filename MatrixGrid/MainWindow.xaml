@@ -10,9 +10,9 @@
 					<ColumnDefinition></ColumnDefinition>
 					<ColumnDefinition></ColumnDefinition>
 				</Grid.ColumnDefinitions>
-				<ComboBox />
-				<ComboBox Grid.Column="1"/>
-				<ComboBox Grid.Column="2" />
+				<ComboBox x:Name="cmBox1" />
+				<ComboBox x:Name="cmBox2" Grid.Column="1"/>
+				<ComboBox x:Name="cmBox3" Grid.Column="2" />
 			</Grid>
 		
 		<Grid>
@@ -21,9 +21,9 @@
 					<ColumnDefinition/>
 					<ColumnDefinition Width="2*"/>
 				</Grid.ColumnDefinitions>
-				<Grid/>
-		<Grid Grid.Column="1"/>
-		<Grid Grid.Column="2"/>
+				<Grid Name="grd1"/>
+		<Grid Grid.Column="1" Name="grd2"/>
+		<Grid Grid.Column="2" Name="grd3"/>
 		</Grid>
 		</DockPanel>
 	</Grid>
