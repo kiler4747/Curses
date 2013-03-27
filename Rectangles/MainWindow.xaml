@@ -14,10 +14,10 @@
 			<ColumnDefinition/>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
-		<Rectangle x:Name="rectangle1" Fill="#FF0000FD" Width="200" Height="100" />
-		<Rectangle x:Name="rectangle4" Fill="#FF00FF3A" Grid.Row="1" Width="200" Height="100"/>
-		<Rectangle x:Name="rectangle3" Fill="#FF7400FF" Grid.Row="1" Grid.Column="1" Width="200" Height="100"/>
-		<Rectangle x:Name="rectangle2" Fill="#FFFF1700" Grid.Column="1" Width="200" Height="100"/>
+		<Rectangle x:Name="rectangle1" Fill="#FF0000FD" Width="200" Height="200" />
+		<Rectangle x:Name="rectangle4" Fill="#FF00FF3A" Grid.Row="1" Width="200" Height="200"/>
+		<Rectangle x:Name="rectangle3" Fill="#FF7400FF" Grid.Row="1" Grid.Column="1" Width="200" Height="200"/>
+		<Rectangle x:Name="rectangle2" Fill="#FFFF1700" Grid.Column="1" Width="200" Height="200"/>
 	</Grid>
 	</DockPanel>
 </Window>
