@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace MatrixGrid
 {
@@ -33,46 +21,18 @@ namespace MatrixGrid
 			cmBox1.SelectedIndex = 0;
 			cmBox2.SelectedIndex = 0;
 			cmBox3.SelectedIndex = 0;
-			cmBox1.SelectionChanged += cmBox_SelectionChanged;
-			cmBox2.SelectionChanged += cmBox_SelectionChanged;
-			cmBox3.SelectionChanged += cmBox_SelectionChanged;
+			cmBox1.SelectionChanged += CmBoxSelectionChanged;
+			cmBox2.SelectionChanged += CmBoxSelectionChanged;
+			cmBox3.SelectionChanged += CmBoxSelectionChanged;
 		}
 
-		private void cmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void CmBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			//int[,] mass1 = new int[(int)cmBox1.SelectedItem, (int)cmBox2.SelectedItem];
-			//int[,] mass2 = new int[(int)cmBox2.SelectedItem, (int)cmBox3.SelectedItem];
-			//int k = 0;
-			//for (int i = 0; i < (int)cmBox1.SelectedItem; i++)
-			//	for (int j = 0; j < (int)cmBox2.SelectedItem; j++)
-			//	{
-			//		mass1[i, j] = k++;
-			//	}
-			//k = 0;
-			//for (int i = 0; i < (int)cmBox2.SelectedItem; i++)
-			//	for (int j = 0; j < (int)cmBox3.SelectedItem; j++)
-			//	{
-			//		mass2[i, j] = k++;
-			//	}
-			//ComboBox cmBox = (ComboBox) sender;
 			if (ReferenceEquals(sender, cmBox1) || ReferenceEquals(sender, cmBox2))
 				FillGrid(grd1, (int)cmBox1.SelectedItem, (int)cmBox2.SelectedItem);
 			if (ReferenceEquals(sender, cmBox2) || ReferenceEquals(sender, cmBox3))
 				FillGrid(grd2, (int)cmBox2.SelectedItem, (int)cmBox3.SelectedItem);
 			MultiplicationGrids(grd1, grd2, grd3);
-
-			//Thread thr = new Thread(CalculateAsync);
-			//thr.Start();
-		}
-
-		void CalculateAsync()
-		{
-			Dispatcher.Invoke(DispatcherPriority.Render, new Action(() =>
-																		{
-																			FillGrid(grd1, (int) cmBox1.SelectedItem, (int) cmBox2.SelectedItem);
-																			FillGrid(grd2, (int) cmBox2.SelectedItem, (int) cmBox3.SelectedItem);
-																			MultiplicationGrids(grd1, grd2, grd3);
-																		}));
 		}
 
 		void FillGrid(Grid grd, int columns, int rows)
@@ -86,8 +46,10 @@ namespace MatrixGrid
 			{
 				for (int j = 0; j < rows; j++)
 				{
-					TextBox tb = new TextBox();
-					tb.Text = rnd.Next(100).ToString();
+					var tb = new TextBox
+								{
+									Text = rnd.Next(100).ToString()
+								};
 					Grid.SetColumn(tb, i);
 					Grid.SetRow(tb, j);
 					grd.Children.Add(tb);
@@ -100,14 +62,17 @@ namespace MatrixGrid
 		void FillGrid(Grid grd, int columns, int rows, int[,] mass)
 		{
 			if (grd == null) throw new ArgumentNullException("grd");
+			if (mass == null) throw new ArgumentNullException("mass");
 
 			InitGrid(grd, columns, rows);
 
 			for (int i = 0; i < columns; i++)
 				for (int j = 0; j < rows; j++)
 				{
-					TextBox tb = new TextBox();
-					tb.Text = mass[i, j].ToString();
+					var tb = new TextBox
+								{
+									Text = mass[i, j].ToString()
+								};
 					Grid.SetColumn(tb, i);
 					Grid.SetRow(tb, j);
 					grd.Children.Add(tb);
