@@ -1,11 +1,15 @@
 ﻿<Window x:Class="TreeClasses.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="10,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="338"/>
-		<Button Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="369,31,0,0" Click="Button_Click_1"/>
-		<TreeView HorizontalAlignment="Left" Height="213" Margin="19,81,0,0" VerticalAlignment="Top" Width="425"/>
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="MainWindow" Height="350" Width="525">
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Top" LastChildFill="True">
+			<Button Content="..." Click="Button_Click_1" DockPanel.Dock="Right"/>
+			<TextBox x:Name="tbFilePath" DockPanel.Dock="Left" />
+		</DockPanel>
+		<TreeView x:Name="tvAssemblyTree" >
+			<TreeViewItem></TreeViewItem>
+		</TreeView>
 
-	</Grid>
+	</DockPanel>
 </Window>
