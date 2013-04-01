@@ -26,8 +26,17 @@ namespace TreeClasses
 			InitializeComponent();
 		}
 
+		enum typesEnum
+		{
+			Method,
+			Constructor,
+			Field,
+			Property,
+			Event
+		}
+
 		private string extensions = "All|*.exe;*.dll";
-		private string openedFile = @"C:\Programming\Курсы\Curses\TreeClasses\bin\Debug\TreeClasses.exe";
+		private string openedFile = "";
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
@@ -40,13 +49,18 @@ namespace TreeClasses
 			tbFilePath.Text = openedFile;
 
 			Assembly assembly = Assembly.LoadFrom(openedFile);
-			foreach (var type in assembly.GetExportedTypes())
+			foreach (var type in assembly.GetTypes())
 			{
 				TreeViewItem tvItem = new TreeViewItem
 										{
 											Header = type.Name
 										};
+
 				// Constructors
+				TreeViewItem constructors = new TreeViewItem
+												{
+													Header = "Constructors"
+												};
 				foreach (var constructorInfo in type.GetConstructors())
 				{
 					string temp = "";
@@ -56,9 +70,15 @@ namespace TreeClasses
 					}
 					if (temp.Length > 2)
 						temp = temp.Substring(0, temp.Length - 2);
-					tvItem.Items.Add(type.Name + "(" + temp + ")");
+					constructors.Items.Add(CreateItem(type.Name + "(" + temp + ")", typesEnum.Constructor));
 				}
+				tvItem.Items.Add(constructors);
+
 				// Methonds
+				TreeViewItem methods = new TreeViewItem
+											{
+												Header = "Methods"
+											};
 				foreach (var methodInfo in type.GetMethods())
 				{
 					string temp = "";
@@ -68,21 +88,60 @@ namespace TreeClasses
 					}
 					if (temp.Length > 2)
 						temp = temp.Substring(0, temp.Length - 2);
-					tvItem.Items.Add(methodInfo.ReturnType.Name +" " + methodInfo.Name + "(" + temp + ")");
+					methods.Items.Add(CreateItem(methodInfo.ReturnType.Name + " " + methodInfo.Name + "(" + temp + ")", typesEnum.Method));
 				}
+				tvItem.Items.Add(methods);
+
 				// Properties
+				TreeViewItem properties = new TreeViewItem()
+											{
+												Header = "Properties"
+											};
 				foreach (var propertyInfo in type.GetProperties())
 				{
-					tvItem.Items.Add(propertyInfo.PropertyType.Name + " " + propertyInfo.Name);
+					properties.Items.Add(CreateItem(propertyInfo.PropertyType.Name + " " + propertyInfo.Name, typesEnum.Property));
 				}
+				tvItem.Items.Add(properties);
+
 				// Fields
+				TreeViewItem fields = new TreeViewItem()
+										{
+											Header = "Fields"
+										};
 				foreach (var fieldInfo in type.GetFields())
 				{
-					tvItem.Items.Add(fieldInfo.FieldType.Name + " " + fieldInfo.Name);
+					fields.Items.Add(CreateItem(fieldInfo.FieldType.Name + " " + fieldInfo.Name, typesEnum.Field));
 				}
+				tvItem.Items.Add(fields);
+
+				TreeViewItem events = new TreeViewItem()
+										{
+											Header = "Events"
+										};
+				foreach (var eventInfo in type.GetEvents())
+				{
+					events.Items.Add(CreateItem(eventInfo.Name, typesEnum.Event));
+				}
+				tvItem.Items.Add(events);
 				tvAssemblyTree.Items.Add(tvItem);
 			}
-			
+		}
+
+		UIElement CreateItem(string header, typesEnum type)
+		{
+			StackPanel panel = new StackPanel();
+			panel.Orientation = Orientation.Horizontal;
+			//panel.IsItemsHost = true;
+			string source = @"pack://application:,,,/icon/" + type.ToString() + ".ico";
+			Image img = new Image();
+			img.Width = 15;
+			img.Height = 15;
+			img.Source = new BitmapImage(new Uri(source));
+			TextBlock tb = new TextBlock();
+			tb.Text = header;
+			panel.Children.Add(img);
+			panel.Children.Add(tb);
+			return panel;
 		}
 	}
 }

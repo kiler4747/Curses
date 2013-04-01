@@ -4,7 +4,7 @@
 		Title="MainWindow" Height="350" Width="525">
 	<DockPanel>
 		<DockPanel DockPanel.Dock="Top" LastChildFill="True">
-			<Button Content="..." Click="Button_Click_1" DockPanel.Dock="Right"/>
+			<Button Content="  . . .  " Click="Button_Click_1" DockPanel.Dock="Right"/>
 			<TextBox x:Name="tbFilePath" DockPanel.Dock="Left" />
 		</DockPanel>
 		<TreeView x:Name="tvAssemblyTree" >
