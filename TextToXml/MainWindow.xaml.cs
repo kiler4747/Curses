@@ -28,6 +28,7 @@ namespace TextToXml
 		{
 			InitializeComponent();
 			tbText.TextChanged += tbText_TextChanged;
+			tbXmlResult.Text = parse.ToString();
 		}
 
 		private void tbText_TextChanged(object sender, TextChangedEventArgs e)
