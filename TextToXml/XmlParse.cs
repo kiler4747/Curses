@@ -8,19 +8,19 @@ using System.Xml;
 
 namespace TextToXml
 {
-	class XmlParse
+	internal class XmlParse
 	{
-		XmlDocument document;
+		private XmlDocument document;
 		private XmlElement root;
-		uint wordCount;
-		uint paragraphCount;
+		private uint wordCount;
+		private uint paragraphCount;
 
 		public XmlParse()
 		{
 			Inicialize();
 		}
 
-		void Inicialize()
+		private void Inicialize()
 		{
 			document = new XmlDocument();
 			root = document.CreateElement("Text");
@@ -39,6 +39,10 @@ namespace TextToXml
 				writer.Formatting = Formatting.Indented;
 				document.Save(writer);
 			}
+			catch (Exception e)
+			{
+				throw new Exception("SaveToFile", e);
+			}
 			finally
 			{
 				writer.Close();
@@ -48,6 +52,7 @@ namespace TextToXml
 		public void Load(string pathFile)
 		{
 			document.Load(pathFile);
+			root = document.DocumentElement;
 		}
 
 		public override string ToString()
@@ -69,6 +74,10 @@ namespace TextToXml
 				}
 				return returnStr;
 			}
+			catch (Exception e)
+			{
+				throw new Exception("ToString", e);
+			}
 			finally
 			{
 				stream.Close();
@@ -76,7 +85,24 @@ namespace TextToXml
 
 		}
 
-		public XmlDocument TextToXml(string text, bool reset)
+		public string XmlToText()
+		{
+			string str = "";
+			foreach (XmlElement paragraph in root.ChildNodes)
+			{
+				foreach (XmlElement propos in paragraph.ChildNodes)
+				{
+					foreach (XmlElement words in propos.ChildNodes)
+					{
+						str += words.GetAttribute("Value") + " ";
+					}
+				}
+				str += "\n";
+			}
+			return str;
+		}
+
+	public XmlDocument TextToXml(string text, bool reset)
 		{
 			if (reset)
 			{
