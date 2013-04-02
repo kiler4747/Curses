@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
-    </Grid>
+		<TextBox x:Name="tbXmlResult" HorizontalAlignment="Left" Height="227" Margin="0,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="517" AcceptsReturn="True"/>
+		<TextBox x:Name="tbText" HorizontalAlignment="Left" Height="44" Margin="0,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="517" TextChanged="tbText_TextChanged" AcceptsReturn="True"/>
+
+	</Grid>
 </Window>

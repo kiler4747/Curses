@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace TextToXml
 {
@@ -22,6 +23,14 @@ namespace TextToXml
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void tbText_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			XmlParse parse = new XmlParse();
+			parse.TextToXml(((TextBox) sender).Text, true);
+
+			tbXmlResult.Text = parse.ToString();
 		}
 	}
 }
