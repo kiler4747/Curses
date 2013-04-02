@@ -11,5 +11,7 @@ namespace Summator
 		{
 			return a - b;
 		}
+
+		public string Symbol { get { return "-"; } }
 	}
 }
