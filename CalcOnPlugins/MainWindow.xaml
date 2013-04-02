@@ -2,7 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+		<TextBox x:Name="tbOperandA" DockPanel.Dock="Top" />
+		<ComboBox x:Name="cmOperators" DockPanel.Dock="Top"/>
+		<TextBox x:Name="tbOperandB"  DockPanel.Dock="Top"/>
+		<Button x:Name="tbCalculate" Content="Caclculate"  DockPanel.Dock="Top"/>
+		<Label x:Name="lbResult"  DockPanel.Dock="Top"/>
+	</DockPanel>
 </Window>
