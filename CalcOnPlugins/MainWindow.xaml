@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
-		<TextBox x:Name="tbOperandA" DockPanel.Dock="Top" />
+		<TextBox x:Name="tbOperandA" DockPanel.Dock="Top" MaxLength="308" Text="0" PreviewTextInput="tbOperand_PreviewTextInput" />
 		<ComboBox x:Name="cmOperators" DockPanel.Dock="Top"/>
-		<TextBox x:Name="tbOperandB"  DockPanel.Dock="Top"/>
-		<Button x:Name="tbCalculate" Content="Caclculate"  DockPanel.Dock="Top"/>
+		<TextBox x:Name="tbOperandB"  DockPanel.Dock="Top" MaxLength="308" Text="0" PreviewTextInput="tbOperand_PreviewTextInput"/>
+		<Button x:Name="tbCalculate" Content="Caclculate"  DockPanel.Dock="Top" Click="tbCalculate_Click" IsDefault="True"/>
 		<Label x:Name="lbResult"  DockPanel.Dock="Top"/>
 	</DockPanel>
 </Window>
