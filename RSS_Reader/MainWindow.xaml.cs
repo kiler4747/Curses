@@ -24,15 +24,18 @@ namespace RSS_Reader
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		Chanal chanal = new Chanal();
+		RSSReader reader = new RSSReader();
 
 		public MainWindow()
 		{
 			InitializeComponent();
 			XmlDocument doc = new XmlDocument();
-			doc.Load(@"http://www.3dnews.ru/news/rss");
-
+			//doc.Load(@"http://www.3dnews.ru/news/rss");
+			doc.Load(@"rss.txt");
+			Chanal chanal = new Chanal();
 			chanal.Load("Save.xml");
+			RSSReader reader = new RSSReader();
+			reader.Chanals.Add(chanal);
 
 			foreach (XmlElement chanalNode in doc.DocumentElement.ChildNodes)
 			{
@@ -40,9 +43,8 @@ namespace RSS_Reader
 				chanal.Fill(chanalNode);
 				//chanal.Add(chanal);
 			}
-			lbNews.ItemsSource = chanal.Items;
-
-			
+			//lbNews.ItemsSource = chanal.Items;
+			tvChanals.ItemsSource = reader.Chanals;
 		}
 
 		//void A()
@@ -78,7 +80,7 @@ namespace RSS_Reader
 
 		private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			chanal.Save("Save.xml");
+			//chanal.Save("Save.xml");
 		}
 	}
 }

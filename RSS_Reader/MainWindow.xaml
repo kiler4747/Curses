@@ -24,9 +24,16 @@
 					
 				</DataTemplate.Triggers>
 		</DataTemplate>
+		<DataTemplate x:Key="ChanalName">
+			<TextBlock Text="{Binding Path=Title}"/>
+		</DataTemplate>
 	</Window.Resources>
 	<Grid>
-		<ListBox x:Name="lbNews" ItemTemplate="{DynamicResource ListBoxNews}"/>
-
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150*"/>
+			<ColumnDefinition Width="367*"/>
+		</Grid.ColumnDefinitions>
+		<ListBox Grid.Column="1" x:Name="lbNews" ItemTemplate="{DynamicResource ListBoxNews}" ItemsSource="{Binding SelectedItemValue, ElementName=tvChanals, Mode=OneWay}" />
+		<TreeView x:Name="tvChanals" Grid.Column="0" ItemTemplate="{DynamicResource ChanalName}" />
 	</Grid>
 </Window>

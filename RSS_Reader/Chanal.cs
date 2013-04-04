@@ -37,6 +37,12 @@ namespace RSS_Reader
 			stream.Close();
 		}
 
+		DateTime GetDateTime(string date)
+		{
+			DateTime dateTime = new DateTime(int.Parse(date.Substring(12, 4)) );
+			return dateTime;
+		}
+
 		public void Load(string pathFile)
 		{
 			FileStream stream = default (FileStream);
