@@ -29,58 +29,54 @@ namespace RSS_Reader
 		public MainWindow()
 		{
 			InitializeComponent();
-			XmlDocument doc = new XmlDocument();
+			//Chanal chanal = new Chanal();
+			//Chanal.GetDateTime("Sat, 06 Apr 2013 01:26:09 +0400");
+			//"Fri, 05 Apr 2013 17:20:07"
+			//"Sat, 06 Apr 2013 01:26:09"
+			//XmlDocument doc = new XmlDocument();
 			//doc.Load(@"http://www.3dnews.ru/news/rss");
-			doc.Load(@"rss.txt");
-			Chanal chanal = new Chanal();
-			chanal.Load("Save.xml");
-			RSSReader reader = new RSSReader();
-			reader.Chanals.Add(chanal);
+			//doc.Load(@"rss.txt");
+			//Chanal chanal = new Chanal();
+			//chanal.Load("Save.xml");
+			//RSSReader reader = new RSSReader();
 
-			foreach (XmlElement chanalNode in doc.DocumentElement.ChildNodes)
-			{
+			//foreach (XmlElement chanalNode in doc.DocumentElement.ChildNodes)
+			//{
 				
-				chanal.Fill(chanalNode);
-				//chanal.Add(chanal);
+			//	chanal.Fill(chanalNode);
+			//	//chanal.Add(chanal);
+			//}
+			////lbNews.ItemsSource = chanal.Items;
+			//reader.Chanals.Add(chanal);
+			reader.Load("Save.xml");
+			foreach (var chanal1 in reader.Chanals)
+			{
+				chanal1.Fill();
 			}
-			//lbNews.ItemsSource = chanal.Items;
 			tvChanals.ItemsSource = reader.Chanals;
 		}
-
-		//void A()
-		//{
-		//	ThreadStart start = delegate()
-		//							{
-		//							...
-		//							};
-		//	new Thread(start).Start();
-		//}
-		//void B()
-		//{
-		//	ThreadStart start = delegate()
-		//							{
-		//							...
-		//							};
-		//	new Thread(start).Start();
-		//}
-
-		//void Start()
-		//{
-		//	...
-		//}
-
-		//void A()
-		//{
-		//	new Thread(Start).Start();
-		//}
-		//void B()
-		//{
-		//	new Thread(Start).Start();
-		//}
 
 		private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			//chanal.Save("Save.xml");
+			reader.Save("Save.xml");
+		}
+
+		private void tvChanals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			lbNews.ItemsSource = reader.Chanals[((ListBox) sender).SelectedIndex].Items;
+		}
+
+		private void btAddChanal_Click(object sender, RoutedEventArgs e)
+		{
+			AddChanalDialog dialog = new AddChanalDialog();
+			if (dialog.ShowDialog() == true)
+				reader.AddChanal(dialog.Source);
+		}
+
+		private void lbNews_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+		{
+			reader.Chanals[tvChanals.SelectedIndex].Items[lbNews.SelectedIndex].Readed = true;
 		}
 	}
 }

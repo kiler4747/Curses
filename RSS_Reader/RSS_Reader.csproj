@@ -54,9 +54,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddChanalDialog.xaml.cs">
+      <DependentUpon>AddChanalDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Chanal.cs" />
+    <Compile Include="MyList.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RSSNode.cs" />
     <Compile Include="RSSReader.cs" />
+    <Page Include="AddChanalDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
