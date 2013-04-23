@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Text;
+using System.Text.RegularExpressions;
 using RSS_Reader.Annotations;
 
 namespace RSS_Reader
@@ -39,6 +40,11 @@ namespace RSS_Reader
 			}
 		}
 
+		public string DescriptionText
+		{
+			get { return RemoveHTML(description); }
+		}
+
 		public string Link
 		{
 			get { return link; }
@@ -48,6 +54,7 @@ namespace RSS_Reader
 				OnPropertyChanged("Link");
 			}
 		}
+
 
 		public string PubDate
 		{
@@ -87,6 +94,11 @@ namespace RSS_Reader
 			DateTime dateTime = new DateTime();
 			dateTime = DateTime.ParseExact(date, "ddd, dd MMM yyyy HH:mm:ss zzz", CultureInfo.InvariantCulture);
 			return dateTime;
+		}
+
+		static public string RemoveHTML(string strHTML)
+		{
+			return Regex.Replace(strHTML, "<(.|\n)*?>", "");
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

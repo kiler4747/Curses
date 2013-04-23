@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 
@@ -14,10 +15,10 @@ namespace RSS_Reader
 	[Serializable]
 	class Chanal : RSSNode
 	{
-		private MyList<Item> items = new MyList<Item>();
+		private ObservableCollection<Item> items = new ObservableCollection<Item>();
 		private string source;
 
-		public MyList<Item> Items
+		public ObservableCollection<Item> Items
 		{
 			get { return items; }
 			//set { items = value; }
@@ -81,7 +82,14 @@ namespace RSS_Reader
 		{
 			XmlDocument document = new XmlDocument();
 			document.Load(Source);
-			Fill((XmlElement)document.DocumentElement.ChildNodes[0]);
+			Fill((XmlElement)document.DocumentElement.ChildNodes[0], false, false);
+		}
+
+		public void Fill(bool downloadSite, bool downloadVieo)
+		{
+			XmlDocument document = new XmlDocument();
+			document.Load(Source);
+			Fill((XmlElement)document.DocumentElement.ChildNodes[0], downloadSite, downloadVieo);
 		}
 
 		public void Load(string pathFile)
@@ -114,7 +122,7 @@ namespace RSS_Reader
 			}
 		}
 
-		public bool Fill(XmlElement element)
+		public bool Fill(XmlElement element, bool downloadSite, bool downloadVideo)
 		{
 			if (element.Name != "channel")
 				return false;
@@ -138,6 +146,8 @@ namespace RSS_Reader
 			}
 			for (int i = temp.Count - 1; i >= 0; i--)
 			{
+				if (downloadSite)
+					temp[i].DownloadHtml("data", downloadVideo);
 				AddItem(temp[i]);
 			}
 			return true;

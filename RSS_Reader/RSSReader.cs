@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
@@ -13,19 +14,35 @@ namespace RSS_Reader
 	[Serializable]
 	class RSSReader : INotifyCollectionChanged
 	{
-		private MyList<Chanal> chanals = new MyList<Chanal>();
+		private System.Collections.ObjectModel.ObservableCollection<Chanal> chanals = new System.Collections.ObjectModel.ObservableCollection<Chanal>();
 
-		public MyList<Chanal> Chanals
+		public System.Collections.ObjectModel.ObservableCollection<Chanal> Chanals
 		{
 			get { return chanals; }
 			set { chanals = value; }
 		}
 
+		public bool DownloadSite
+		{
+			get { return downloadSite; }
+			set { downloadSite = value; }
+		}
+
+		public bool DownloadVideo
+		{
+			get { return downloadVideo; }
+			set { downloadVideo = value; }
+		}
+
+		private bool downloadSite;
+		private bool downloadVideo;
+
+
 		public void AddChanal(string source)
 		{
 			Chanal chanal = new Chanal();
 			chanal.Source = source;
-			chanal.Fill();
+			chanal.Fill(downloadSite, downloadVideo);
 			Chanals.Add(chanal);
 			if (CollectionChanged != null)
 				CollectionChanged(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, chanal));

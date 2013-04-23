@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>.\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -58,8 +61,8 @@
       <DependentUpon>AddChanalDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Chanal.cs" />
-    <Compile Include="MyList.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ReaderToListConverter.cs" />
     <Compile Include="RSSNode.cs" />
     <Compile Include="RSSReader.cs" />
     <Page Include="AddChanalDialog.xaml">
