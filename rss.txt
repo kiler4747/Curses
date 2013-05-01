@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+	   <title>3DNews - Daily Digital Digest: Новости Hardware</title>
+	  <link>http://www.3dnews.ru/</link>
+	  <description>Новости Hardware на 3DNews</description>
+	  <language>ru</language>
+	  <pubDate>Thu, 04 Apr 2013 17:34:38 +0400</pubDate>
+	  <lastBuildDate>Thu, 04 Apr 2013 17:34:38 +0400</lastBuildDate>
+	  <docs>http://www.3dnews.ru/news/rss</docs>
+	  <generator>3DNews - Sippet LWP</generator>
+	  <managingEditor>nivnikov@3dnews.ru (Денис Нивников)</managingEditor>
+	  <webMaster>admin@3dnews.ru (Алексей Зарубин)</webMaster>
+	  <image>
+		  <url>http://www.3dnews.ru/i/3dn.gif</url>
+		  <title>3DNews - Daily Digital Digest: Новости Hardware</title>
+		  <link>http://www.3dnews.ru/</link>
+	  </image>
+	  <atom:link href="http://www.3dnews.ru/news/rss" rel="self" type="application/rss+xml" />
+
+	  
+	<item>
+		<title>В апреле телевизоры Sony BRAVIA серий W9, W8, W6 и R4 поступят в продажу в странах СНГ</title>
+		<link>http://www.3dnews.ru/news/643726/</link>
+		<guid>http://www.3dnews.ru/news/643726/#643726</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Sony представила новые модели телевизоров BRAVIA серий W9, W8, W6 и R4. Уже в этом месяце новинки появятся в продаже в странах СНГ с ценой в пределах от 15 990 руб. до 89 990 руб.Новые модели выполнены в фирменном дизайне...]]></description>
+		<pubDate>Thu, 04 Apr 2013 17:31:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mp">мониторы, проекторы, ТВ-тюнеры, телевизоры</category>
+	</item>
+	<item>
+		<title>Знакомство с видеокартой ASUS GeForce GTX 660 Ti Dragon</title>
+		<link>http://www.3dnews.ru/news/643740/</link>
+		<guid>http://www.3dnews.ru/news/643740/#643740</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Сотрудникам сетевого ресурса Cowcotland.com удалось раздобыть изображение ещё пока официально не представленной компанией ASUSTeK Computer видеокарты ASUS GeForce GTX 660 Ti Dragon на базе созданного по 28-нм проектным нормам чипа GK104 с 1344 ядрами CUDA и архитектурой Kepler.Модель изготовлена на...]]></description>
+		<pubDate>Thu, 04 Apr 2013 16:55:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/video">видеокарты</category>
+	</item>
+	<item>
+		<title>3DNews Daily, выпуск #29: Видеоновости за день</title>
+		<link>http://www.3dnews.ru/news/643747/</link>
+		<guid>http://www.3dnews.ru/news/643747/#643747</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В этом выпуске: облачное приложение Skydrive обновляется до версии 3.0 и становится вновь доступным для iOS; твиттер-клиент для Android обновился до версии 4.0; компания Disney закрыла знаменитую студию разработчиков видеоигр LucasArts; Facebook обещает показать свой «новый дом на Android»]]></description>
+		<pubDate>Thu, 04 Apr 2013 16:30:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+		<category domain="http://www.3dnews.ru/dphoto">фото, видео, фраза дня</category>
+	</item>
+	<item>
+		<title>Итоги конкурса компании Creative!</title>
+		<link>http://www.3dnews.ru/news/643643/</link>
+		<guid>http://www.3dnews.ru/news/643643/#643643</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Дорогие друзья!Мы благодарим всех участников конкурса, проведенного нашим сайтом совместно&nbsp;с&nbsp;компанией&nbsp;Creative,&nbsp;ведущим мировым производителем продуктов для цифровых развлечений, предназначенных для использования с персональным компьютером (ПК) и Интернетом.Чтобы принять участие в конкурсе и получить шанс выиграть один из призов от компании&nbsp;Creative, вы должны...]]></description>
+		<pubDate>Thu, 04 Apr 2013 16:17:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/contest">Конкурсы 3DNews и наших партнеров</category>
+	</item>
+	<item>
+		<title>Итоги конкурса AMD - кто выиграл процессор?</title>
+		<link>http://www.3dnews.ru/news/643670/</link>
+		<guid>http://www.3dnews.ru/news/643670/#643670</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_red.jpg" border="0" height="85" width="120"/>Дорогие друзья!Мы благодарим всех участников конкурса, проведенного нашим сайтом совместно&nbsp;с&nbsp;компанией&nbsp;AMD,&nbsp;лидером по разработке графических и центральных процессоров.Этот конкурс был посвящен новейшим процессорным технологиям&nbsp;AMD, а именно гибридным процессорам&nbsp;AMD APU&nbsp;второго поколения и топовым процессорам&nbsp;AMD FX. Чтобы принять участие в конкурсе и получить шанс...]]></description>
+		<pubDate>Thu, 04 Apr 2013 15:25:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/contest">Конкурсы 3DNews и наших партнеров</category>
+	</item>
+	<item>
+		<title>Дежурные по Рунету: Доброта сейчас не в моде?</title>
+		<link>http://www.3dnews.ru/news/643735/</link>
+		<guid>http://www.3dnews.ru/news/643735/#643735</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Загрузка...                                       ...]]></description>
+		<pubDate>Thu, 04 Apr 2013 15:15:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+	</item>
+	<item>
+		<title>Bloomberg: Nokia необходимо выпустить «фаблет»</title>
+		<link>http://www.3dnews.ru/news/643709/</link>
+		<guid>http://www.3dnews.ru/news/643709/#643709</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Рынок так называемых &laquo;фаблетов&raquo;, которые представляют из себя смартфоны с несколько увеличенным дисплеем, не перестаёт расти. Аналитик IDC Франциско Джеронимо (Francisco Jeronimo) в ходе интервью для информационного агентства заявил, что такие устройства могут быть интересны многим покупателям.&laquo;Фаблеты уже успели стать...]]></description>
+		<pubDate>Thu, 04 Apr 2013 14:40:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+	</item>
+	<item>
+		<title>Raspberry Pi в США полностью раскупили в день старта продаж</title>
+		<link>http://www.3dnews.ru/news/643684/</link>
+		<guid>http://www.3dnews.ru/news/643684/#643684</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Компьютер Raspberry Pi поступил в продажу в США в воскресенье, и до конца дня все доступные устройства были распроданы. Цена Raspberry Pi модель А в США составила 25 долларов. Компьютер обладает 256 Мбайт оперативной памяти, USB-портом, HDMI, SD кард-ридером и...]]></description>
+		<pubDate>Thu, 04 Apr 2013 14:13:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+		<category domain="http://www.3dnews.ru/itmarket">рынок IT</category>
+		<category domain="http://www.3dnews.ru/financial">финансовые новости и аналитика</category>
+	</item>
+	<item>
+		<title>Samsung планирует поставить 500 миллионов телефонов в 2013 году</title>
+		<link>http://www.3dnews.ru/news/643683/</link>
+		<guid>http://www.3dnews.ru/news/643683/#643683</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Согласно данным из отраслевых источников, в планах южнокорейской компании Samsung на 2013 год поставить на рынок 500 миллионов телефонов. Как утверждают источники, китайский производитель панелей BOE в настоящее время производит для Samsung около 10 миллионов дисплеев в месяц для телефонов...]]></description>
+		<pubDate>Thu, 04 Apr 2013 13:32:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/itmarket">рынок IT</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+		<category domain="http://www.3dnews.ru/financial">финансовые новости и аналитика</category>
+	</item>
+	<item>
+		<title>Осенью будет представлен новый планшет Galaxy S Tab</title>
+		<link>http://www.3dnews.ru/news/643710/</link>
+		<guid>http://www.3dnews.ru/news/643710/#643710</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В прошлом месяце в Сети появлялась информация о том, что Samsung может заниматься разработкой нового планшета Galaxy Tab 3 Plus с 10,1 или 11,6-дюймовым дисплеем, разрешением 1920х1020 пикселей и матрицей Super AMOLED.  Как отмечает SamMobile, данная информация оказалась несколько...]]></description>
+		<pubDate>Thu, 04 Apr 2013 12:52:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/smart-handhelds">планшетные компьютеры и смартбуки</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Google начнет продажи следующей версии Nexus 7 в июле</title>
+		<link>http://www.3dnews.ru/news/643708/</link>
+		<guid>http://www.3dnews.ru/news/643708/#643708</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Планшет Nexus 7 следующего поколения уже готов к появлению на публике. По данным агентства Reuters, ссылающегося на информацию нескольких источников, выход новой версии Nexus 7, основанной на чипе Qualcomm Snapdragon, намечен на июль. Ее производством будет заниматься ASUSTeK Computer. Во...]]></description>
+		<pubDate>Thu, 04 Apr 2013 12:10:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/smart-handhelds">планшетные компьютеры и смартбуки</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Смартфон Samsung Galaxy Ace 3 выйдет в мае или июне</title>
+		<link>http://www.3dnews.ru/news/643701/</link>
+		<guid>http://www.3dnews.ru/news/643701/#643701</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>По данным ресурса SamMobile, компания Samsung сейчас активно работает над созданием следующего представителя линейки Galaxy Ace. Первая модель линейки вышла в 2011 г., продажи Samsung Galaxy Ace 2 стартовали в 2012 г.Смартфон Samsung Galaxy Ace 2, как предполагается, будет оснащен...]]></description>
+		<pubDate>Thu, 04 Apr 2013 11:25:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+	</item>
+	<item>
+		<title>Продемонстрирован способ 3D-печати скелетов живых существ</title>
+		<link>http://www.3dnews.ru/news/643674/</link>
+		<guid>http://www.3dnews.ru/news/643674/#643674</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Студенты из Университета Нотр-Дама представили технологию для создания копий скелетов живых существ в пластике. Речь идет о печати моделей, полученных при помощи компьютерной томографии, на специальных 3D-принтерах.По словам молодых исследователей, новая технология может найти применение в процессе обучения врачей и...]]></description>
+		<pubDate>Thu, 04 Apr 2013 10:12:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/science">на острие науки</category>
+	</item>
+	<item>
+		<title>Google представит ноутбук с Android</title>
+		<link>http://www.3dnews.ru/news/643673/</link>
+		<guid>http://www.3dnews.ru/news/643673/#643673</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>За достаточно короткий период времени Google удалось успешно занять лидирующую позицию на рынке мобильных устройств. По информации DigiTimes, теперь компания может акцентировать свое внимание на рынке ноутбуков, выпустив в текущем году решение, которое будет работать под управлением Android и обладать...]]></description>
+		<pubDate>Thu, 04 Apr 2013 09:48:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/notebook">ноутбуки и нетбуки</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>HTC представит планшет с Windows 8</title>
+		<link>http://www.3dnews.ru/news/643655/</link>
+		<guid>http://www.3dnews.ru/news/643655/#643655</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>C момента релиза последнего планшета HTC прошло более года и с того времени компания неоднократно заявляла о своём намерении покинуть рынок планшетов. Судя по всему, в этом году HTC все же собирается возобновить борьбу за столь перспективный рынок.Как сообщает NPD...]]></description>
+		<pubDate>Thu, 04 Apr 2013 09:26:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/smart-handhelds">планшетные компьютеры и смартбуки</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Ключевой сотрудник Microsoft переходит в Amazon</title>
+		<link>http://www.3dnews.ru/news/643653/</link>
+		<guid>http://www.3dnews.ru/news/643653/#643653</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Имя Чарли Киндела (Charlie Kindel) может быть знакомо многим поклонникам Microsoft и устройств с Windows Phone. В компании из Редмонда Чарли Киндел проработал более 21 года и в последние годы был одним из ключевых сотрудников команды по разработке Windows Phone.Теперь...]]></description>
+		<pubDate>Thu, 04 Apr 2013 09:00:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/itmarket">рынок IT</category>
+	</item>
+	<item>
+		<title>NVIDIA: «Новое поколение мобильных процессоров обгонит PS3 и Xbox 360»</title>
+		<link>http://www.3dnews.ru/news/643654/</link>
+		<guid>http://www.3dnews.ru/news/643654/#643654</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>На днях Тони Тамаси (Tony Tamasi), старший вице-президент подразделения Content &amp; Technology компании NVIDIA, дал интервью ресурсу Bit-tech, в котором он рассказал, что следующая волна мобильных устройств по производительности обгонит текущее поколение игровых консолей.&laquo;Уже сейчас PlayStation 3 и Xbox 360...]]></description>
+		<pubDate>Thu, 04 Apr 2013 06:16:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/cpu">процессоры</category>
+	</item>
+	<item>
+		<title>Archos отдала планшет Arnova 90 G3 на тестирование в FCC</title>
+		<link>http://www.3dnews.ru/news/643634/</link>
+		<guid>http://www.3dnews.ru/news/643634/#643634</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Французская компания Archos готовит к релизу на территории Европы новый планшетный компьютер Arnova 90 G3, причем до его появления в продаже остается буквально несколько дней &mdash; в Испании он выйдет уже 8 апреля. Однако этого может и не случиться, если...]]></description>
+		<pubDate>Thu, 04 Apr 2013 04:15:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/smart-handhelds">планшетные компьютеры и смартбуки</category>
+	</item>
+	<item>
+		<title>TSMC установит оборудование для 20-нм техпроцесса с опережением графика</title>
+		<link>http://www.3dnews.ru/news/643665/</link>
+		<guid>http://www.3dnews.ru/news/643665/#643665</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Компания Taiwan Semiconductor Manufacturing Company (TSMC), объявившая о завершении разработки процессоров Cortex-A57 на базе 16-нм техпроцесса, также сообщила в интервью китайскому ресурсу Economic Dailys News (EDN) о намерении приступить 20 апреля к установке оборудования по производству чипов согласно 20-нм техпроцессу....]]></description>
+		<pubDate>Thu, 04 Apr 2013 02:15:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/development">разработка и производство электроники</category>
+		<category domain="http://www.3dnews.ru/itmarket">рынок IT</category>
+	</item>
+	<item>
+		<title>Samsung представит две модели Galaxy S4 mini</title>
+		<link>http://www.3dnews.ru/news/643658/</link>
+		<guid>http://www.3dnews.ru/news/643658/#643658</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Вместе с флагманским смартфоном Galaxy S4 на рынке может появиться и бюджетная модель под названием Galaxy S4 mini, которая будет обладать поддержкой двух SIM-карт.По информации SamMobile, модель с поддержкой двух SIM-карт под названием Galaxy S4 mini DUOS (GT-I9192) будет оснащаться...]]></description>
+		<pubDate>Thu, 04 Apr 2013 00:01:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>FIFA будет использовать электронную систему определения взятия ворот на Чемпионате мира 2014</title>
+		<link>http://www.3dnews.ru/news/643682/</link>
+		<guid>http://www.3dnews.ru/news/643682/#643682</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Несмотря на непреклонную позицию касательно электронных систем определения взятия ворот, последние громкие ошибки судей заставили футбольных чиновников изменить свое решение. На грядущем Чемпионате мира в Бразилии в 2014 году, а также на Кубке конфедерации в 2013 будут использоваться 14 камер,...]]></description>
+		<pubDate>Wed, 03 Apr 2013 22:44:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/itworld">интересности из мира хай-тек</category>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+		<category domain="http://www.3dnews.ru/science">на острие науки</category>
+	</item>
+	<item>
+		<title>Прототип Lumia 950 «засветился» на фото</title>
+		<link>http://www.3dnews.ru/news/643672/</link>
+		<guid>http://www.3dnews.ru/news/643672/#643672</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>На днях представителям портала Windows Phone Central попал в руки снимок ещё не анонсированного прототипа смартфона Nokia Lumia 950, который обладает новым дизайном.   Стоит отметить, что представители Windows Phone Central не могут подтвердить подлинность снимка прототипа.  ...]]></description>
+		<pubDate>Wed, 03 Apr 2013 20:02:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Корпус Corsair Obsidian 900D в «винтажной» версии Special Edition Beige</title>
+		<link>http://www.3dnews.ru/news/643702/</link>
+		<guid>http://www.3dnews.ru/news/643702/#643702</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Специально для великовозрастных геймеров, которые испытывают ностальгию по концу 90-х прошлого века, когда игровые десктопы ещё выпускались в бежевом цвете, компания Corsair представила особую версию своего флагманского компьютерного корпуса Obsidian 900D формата Full Tower, получившую название Special Edition Beige.От первоначального...]]></description>
+		<pubDate>Wed, 03 Apr 2013 18:47:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/case">корпуса, настольные компьютеры</category>
+	</item>
+	<item>
+		<title>Анонс трёх геймерских плат MSI на чипсете Intel Z77</title>
+		<link>http://www.3dnews.ru/news/643697/</link>
+		<guid>http://www.3dnews.ru/news/643697/#643697</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue.jpg" border="0" height="85" width="120"/>Компания Micro-Star International (MSI) официально анонсировала выпуск трёх игровых материнских плат из линейки G Series, первый публичный показ которых состоялся в рамках мартовской международной выставки CeBIT 2013 в Ганновере.На суд заядлых геймеров разработчики предложили модели Z77A-GD65 GAMING, Z77A-G45 GAMING и...]]></description>
+		<pubDate>Wed, 03 Apr 2013 18:11:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mb">материнские платы</category>
+	</item>
+	<item>
+		<title>Водоблоки от EK Water Blocks для двух мощных видеокарт AMD FirePro</title>
+		<link>http://www.3dnews.ru/news/643681/</link>
+		<guid>http://www.3dnews.ru/news/643681/#643681</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_red.jpg" border="0" height="85" width="120"/>Компания EK Water Blocks первой из производителей систем жидкостного охлаждения заявила о выпуске оригинальных низкопрофильных водоблоков для мощных профессиональных видеокарт  FirePro S10000 и FirePro W9000 от AMD.EK Water Blocks EK-FCS10000Модели EK-FCS10000 и EK-FCW9000 имеют медную &laquo;подошву&raquo; с особой системой...]]></description>
+		<pubDate>Wed, 03 Apr 2013 17:38:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/cooler">системы охлаждения</category>
+	</item>
+	<item>
+		<title>3DNews Daily, выпуск #28: Видеоновости за день</title>
+		<link>http://www.3dnews.ru/news/643700/</link>
+		<guid>http://www.3dnews.ru/news/643700/#643700</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В этом выпуске: разработка новой мобильной операционной системы iOS 7 отстаёт от графика; Microsoft собирается выпустить новую версию календаря для Outlook.com; контроллер Nebula One позволяет разнородным частным серверам воспользоваться преимуществами облачных вычислений; вышла 20-я версия браузера Firefox]]></description>
+		<pubDate>Wed, 03 Apr 2013 17:00:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+		<category domain="http://www.3dnews.ru/dphoto">фото, видео, фраза дня</category>
+	</item>
+	<item>
+		<title>WSJ: Apple начнёт производство iPhone 5S в этом квартале, а дешёвый iPhone выйдет позже</title>
+		<link>http://www.3dnews.ru/news/643663/</link>
+		<guid>http://www.3dnews.ru/news/643663/#643663</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Согласно ресурсу The Wall Street Journal, Apple собирается начать массовое производство своего нового флагманского смартфона уже в текущем квартале, а ещё одна новая модель, создаваемая для более массового рынка, находится в разработке для запуска позже в этом году. Таким образом,...]]></description>
+		<pubDate>Wed, 03 Apr 2013 16:50:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Итоги конкурса компании SVEN</title>
+		<link>http://www.3dnews.ru/news/643642/</link>
+		<guid>http://www.3dnews.ru/news/643642/#643642</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Дорогие друзья!Мы благодарим всех участников конкурса, проведенного нашим сайтом совместно&nbsp;с&nbsp;финской компанией&nbsp;SVEN, ведущим изготовителем компьютерной периферии и аксессуаров.Чтобы принять участие в конкурсе и получить шанс выиграть один из призов от компании&nbsp;SVEN, вы должны были ответить на несколько простых вопросов о компании...]]></description>
+		<pubDate>Wed, 03 Apr 2013 16:14:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/contest">Конкурсы 3DNews и наших партнеров</category>
+	</item>
+	<item>
+		<title>Дежурные по Рунету: И вновь про уникальность снежинки…</title>
+		<link>http://www.3dnews.ru/news/643698/</link>
+		<guid>http://www.3dnews.ru/news/643698/#643698</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Загрузка...                                       ...]]></description>
+		<pubDate>Wed, 03 Apr 2013 15:13:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+	</item>
+	<item>
+		<title>Pentax K-30 теперь доступен в 15 новых цветах с матовой или глянцевой отделкой</title>
+		<link>http://www.3dnews.ru/news/643666/</link>
+		<guid>http://www.3dnews.ru/news/643666/#643666</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Поклонники защищённой от воды и пыли цифровой зеркальной камеры Pentax K-30 получили очень широкий выбор цветовой палитры и вариантов исполнений. 16,3-магапиксельный фотоаппарат теперь получил 15 новых вариантов цветовых исполнений с матовой или глянцевой отделкой.Представлены цвета бордо (глубокий красный), белый, оранжевый,...]]></description>
+		<pubDate>Wed, 03 Apr 2013 14:43:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/digitalcam">цифровые фото-/видеокамеры, DSLR, объективы, фоторамки, вспышки</category>
+	</item>
+	<item>
+		<title>Sony подтвердила выход планшета Xperia Tablet Z в мае</title>
+		<link>http://www.3dnews.ru/news/643657/</link>
+		<guid>http://www.3dnews.ru/news/643657/#643657</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В ходе презентации 10,1&rdquo; планшета Xperia Tablet Z на выставке Mobile World Congress 2013 компания Sony пообещала начать его выпуск этой весной. Впоследствии появились слухи о том, что из-за технических проблем релиз новинки откладывается на неопределенное время.В итоге, как выяснилось,...]]></description>
+		<pubDate>Wed, 03 Apr 2013 14:16:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/smart-handhelds">планшетные компьютеры и смартбуки</category>
+	</item>
+	<item>
+		<title>Flurry рекомендует Apple не увеличивать размер экрана iPhone до 5”</title>
+		<link>http://www.3dnews.ru/news/643641/</link>
+		<guid>http://www.3dnews.ru/news/643641/#643641</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>У Apple нет никакой необходимости в увеличении размера диагонали экрана iPhone до 5&rdquo;, хотя на этом настаивают некоторые эксперты Уолл-стрит. Согласно результатам исследования аналитической фирмы Flurry Analytics, наиболее популярными у пользователей являются смартфоны с экраном 3,5&rdquo; &ndash; 4,9&rdquo; по диагонали,...]]></description>
+		<pubDate>Wed, 03 Apr 2013 14:08:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+	</item>
+	<item>
+		<title>AMD о PS4: мы просто предложили то, на что NVIDIA не способна</title>
+		<link>http://www.3dnews.ru/news/643627/</link>
+		<guid>http://www.3dnews.ru/news/643627/#643627</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_green.jpg" border="0" height="85" width="120"/>После анонса игровой консоли PlayStation 4 стало ясно, что Sony отказалась от сотрудничества с NVIDIA. Представители последней сказали, что причина этого — просто невыгодные условия сотрудничества и даже раскритиковали PlayStation 4 за характеристики, уступающие среднему игровому ПК. Нил Робисон из AMD сказал, что NVIDIA просто немного обидно, а также дал ряд других комментариев]]></description>
+		<pubDate>Wed, 03 Apr 2013 14:00:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/gameconsole">игровые консоли</category>
+	</item>
+	<item>
+		<title>Apple проведёт телефонную конференцию 23 апреля</title>
+		<link>http://www.3dnews.ru/news/643652/</link>
+		<guid>http://www.3dnews.ru/news/643652/#643652</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>За последнее время стоимость акций Apple снизилась более чем на 33%, что вызвано недоверием со стороны инвесторов, которые были недовольны отсутствием инноваций в последних устройствах компании. Однако ситуацию может изменить телефонная конференция, посвящённая результатам второго финансового квартала 2013 года. ...]]></description>
+		<pubDate>Wed, 03 Apr 2013 13:31:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/itmarket">рынок IT</category>
+		<category domain="http://www.3dnews.ru/financial">финансовые новости и аналитика</category>
+	</item>
+	<item>
+		<title>ADATA выпустила SSD серии SX1000L для серверов</title>
+		<link>http://www.3dnews.ru/news/643679/</link>
+		<guid>http://www.3dnews.ru/news/643679/#643679</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Пресс-служба компании ADATA Technology Co. заявила о выпуске своих первых твердотельных накопителей, специально оптимизированных для применения в серверных системах.Новинки, вошедшие в линейку SX1000L, изготовлены в 2,5-дюймовом форм-факторе с применением чипов флеш-памяти типа MLC NAND, построены на контроллере LSI SandForce SF-2281...]]></description>
+		<pubDate>Wed, 03 Apr 2013 12:49:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/memory">модули ОЗУ, карты памяти, флеш-накопители, кардридеры</category>
+	</item>
+	<item>
+		<title>Hyundai E4U: яйцевидный персональный мини-мобиль</title>
+		<link>http://www.3dnews.ru/news/643676/</link>
+		<guid>http://www.3dnews.ru/news/643676/#643676</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В рамках проходящей в Южной Корее выставки Seoul Motor Show 2013 компания Hyundai Motor представила персональное мобильное передвижное средство E4U. Пока что это устройство, разработанное подразделением Advanced Design Department, является ещё концептуальным образцом, но уже может передвигаться.Символ E в названии...]]></description>
+		<pubDate>Wed, 03 Apr 2013 12:31:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/autoht">автомобили, мотоциклы, транспортные средства</category>
+	</item>
+	<item>
+		<title>Japan Display разработала 5,2&quot; Full HD OLED-панель</title>
+		<link>http://www.3dnews.ru/news/643668/</link>
+		<guid>http://www.3dnews.ru/news/643668/#643668</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Компания Japan Display заявила о разработке 5,2-дюймовой OLED-панели с разрешением 423 точки на дюйм (в целом, разрешение составляет 1920 х 1080 пикселей). В новинке используются белые органические светодиоды и цветные фильтры.Многие современные смартфоны уровня High-End используют Full HD-панели. Например, крупнейший...]]></description>
+		<pubDate>Wed, 03 Apr 2013 11:55:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mp">мониторы, проекторы, ТВ-тюнеры, телевизоры</category>
+	</item>
+	<item>
+		<title>IEEE сформировала группу по разработке 400-Гбит/с Ethernet</title>
+		<link>http://www.3dnews.ru/news/643667/</link>
+		<guid>http://www.3dnews.ru/news/643667/#643667</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Организация IEEE официально заявила о формировании специальной рабочей группы, которая займется разработкой спецификации для сетей Ethernet следующего поколения. Пропускная способность новой версии стандарта составит 400 Гбит/с.Как отметил председатель IEEE 802.2 400 Gb/s Ethernet Study Group Джон Д&rsquo;Амброзия (John D&rsquo;Ambrosia), объёмы...]]></description>
+		<pubDate>Wed, 03 Apr 2013 11:18:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/wireless">сети и коммуникации</category>
+	</item>
+	<item>
+		<title>Samsung запустит серию смартфонов Galaxy Mega</title>
+		<link>http://www.3dnews.ru/news/643639/</link>
+		<guid>http://www.3dnews.ru/news/643639/#643639</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Компания Samsung собирается открыть новую серию смартфонов под названием Galaxy Mega, в которую войдут исключительно планшетофоны &mdash; нечто среднее между смартфоном и планшетным компьютером. Согласно инсайдерской информации, в распоряжении корейского производителя уже имеется два первых представителя этой линейки.Серия Samsung Galaxy...]]></description>
+		<pubDate>Wed, 03 Apr 2013 10:10:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+	</item>
+	<item>
+		<title>Приставка Nintendo Wii Mini уже на пути в Россию</title>
+		<link>http://www.3dnews.ru/news/643637/</link>
+		<guid>http://www.3dnews.ru/news/643637/#643637</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Игровая приставка Wii Mini от компании Ninendo наконец-то обрела официальную дату выпуска на территории нашей страны. В России она появится уже очень скоро &mdash; буквально 15 числа текущего месяца. Это официальная дата, озвученная представителями компании-разработчика.Wii Mini &mdash; это более компактная...]]></description>
+		<pubDate>Wed, 03 Apr 2013 09:48:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/gameconsole">игровые консоли</category>
+	</item>
+	<item>
+		<title>Huntkey PBA7000: 7000-мАч портативный аккумулятор для зарядки по USB</title>
+		<link>http://www.3dnews.ru/news/643664/</link>
+		<guid>http://www.3dnews.ru/news/643664/#643664</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Китайская компания Huntkey Enterprise Group представила новый переносной аккумулятор для мобильных устройств PBA7000. От предшественниц, PBA2000 и PBA3500, эта модель отличается более высокой ёмкостью &mdash; 7000 мАч.Новинка включает два USB-порта с напряжением и током на выходе 5 В и 1...]]></description>
+		<pubDate>Wed, 03 Apr 2013 09:00:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/bp">блоки питания, адаптеры, источники питания</category>
+	</item>
+	<item>
+		<title>LG продала в Корее более полумиллиона Optimus G Pro</title>
+		<link>http://www.3dnews.ru/news/643626/</link>
+		<guid>http://www.3dnews.ru/news/643626/#643626</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Смартфон LG Optimus G Pro вышел пока только на домашнем рынке в Южной Корее. Но компания уже спешит сообщить, что её новый флагманский аппарат поставил новый рекорд продаж на этом рынке. В пресс-релизе сообщается, что всего за 40 дней присутствия...]]></description>
+		<pubDate>Wed, 03 Apr 2013 07:14:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/financial">финансовые новости и аналитика</category>
+	</item>
+	<item>
+		<title>Apple меняет дату проведения Macworld/iWorld 2014</title>
+		<link>http://www.3dnews.ru/news/643620/</link>
+		<guid>http://www.3dnews.ru/news/643620/#643620</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Традиционное мероприятие Apple &mdash; Macworld/iWorld в следующем году будет проходить с 27 по 29 марта. Ранее планировалось провести мероприятие в первых числах февраля, однако впоследствии было принято решение изменить расписание.Причиной переноса стал Суперкубок (Super Bowl) по американскому футболу. Ни один...]]></description>
+		<pubDate>Wed, 03 Apr 2013 03:26:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/itclub">мероприятия и события IT-индустрии, выставки, форумы</category>
+	</item>
+	<item>
+		<title>Фото Facebook-фона HTC First появилось в Сети в преддверии анонса</title>
+		<link>http://www.3dnews.ru/news/643671/</link>
+		<guid>http://www.3dnews.ru/news/643671/#643671</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В преддверии мероприятия социальной сети Facebook, намеченного на 4 апреля, благодаря ресурсу @evleaks в Сети появилось фото смартфона HTC First, прежде известного под именем HTC Myst, а также Opera и Buffy. Это дружественное к пользователям Facebook устройство, как ожидается, представят...]]></description>
+		<pubDate>Wed, 03 Apr 2013 01:28:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/itclub">мероприятия и события IT-индустрии, выставки, форумы</category>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+		<category domain="http://www.3dnews.ru/rumors">слухи</category>
+	</item>
+	<item>
+		<title>Объявлена дата российского релиза Samsung Galaxy S4</title>
+		<link>http://www.3dnews.ru/news/643638/</link>
+		<guid>http://www.3dnews.ru/news/643638/#643638</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Отечественное подразделение компании Samsung уже принимает предварительные заказы на флагманский смартфон Galaxy S4, анонсированный буквально пару недель назад. До сегодняшнего дня дата его релиза в нашей стране не называлась, однако теперь официально известно, что первые партии поступят в продажу уже...]]></description>
+		<pubDate>Wed, 03 Apr 2013 00:02:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mobile">мобильные телефоны, смартфоны, сотовая связь, коммуникаторы, КПК</category>
+	</item>
+	<item>
+		<title>Мощная плата ASUS P9X79-E WS с семью слотами PCI Express 3.0 x16</title>
+		<link>http://www.3dnews.ru/news/643650/</link>
+		<guid>http://www.3dnews.ru/news/643650/#643650</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Пресс-служба компании ASUSTeK Computer анонсировала выпуск материнской платы P9X79-E WS в форм-факторе CEB, предназначенной для постройки высокопроизводительной рабочей станции с мощной графической подсистемой.Новинка основана на наборе микросхем Intel X79 Express и рассчитана на установку процессоров Intel поколения Sandy Bridge-E в...]]></description>
+		<pubDate>Tue, 02 Apr 2013 22:33:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mb">материнские платы</category>
+	</item>
+	<item>
+		<title>Профессиональный 30&quot; монитор Lenovo ThinkVision LT3053p Wide за $1600</title>
+		<link>http://www.3dnews.ru/news/643632/</link>
+		<guid>http://www.3dnews.ru/news/643632/#643632</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>С прицелом на профессионалов, работающих с фотографиями и видео контентом, дизайнеров и других потребителей, кому нужен крупный экран с точной передачей цветов и оттенков, японское подразделение компании Lenovo разработало свой новый 30-дюймовый жидкокристаллический монитор ThinkVision LT3053p Wide.Новинка использует панель типа...]]></description>
+		<pubDate>Tue, 02 Apr 2013 19:19:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mp">мониторы, проекторы, ТВ-тюнеры, телевизоры</category>
+	</item>
+	<item>
+		<title>ARM и TSMC создали 16-нм чип Cortex-A57 с использованием FinFET</title>
+		<link>http://www.3dnews.ru/news/643628/</link>
+		<guid>http://www.3dnews.ru/news/643628/#643628</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>Компании TSMC и ARM заявили завершении разработки и готовности к производству первых процессоров Cortex-A57, в которых используется передовой 16-нм техпроцесс и транзисторы FinFET. Отметим, Cortex-A57 на сегодняшний день является самым высокопроизводительным продуктом в ассортименте ARM. Он был представлен ещё в...]]></description>
+		<pubDate>Tue, 02 Apr 2013 18:23:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/cpu">процессоры</category>
+	</item>
+	<item>
+		<title>Японцы создают телевизор, способный передавать запахи</title>
+		<link>http://www.3dnews.ru/news/643602/</link>
+		<guid>http://www.3dnews.ru/news/643602/#643602</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В Стране Восходящего Солнца полным ходом идут работы по разработке и созданию технологии, которая полностью изменит наше представление о современном телевидении. Система получила название &laquo;экран запахов&raquo;, и ее предназначение заключается в передаче запахов, так или иначе связанных с тем, что...]]></description>
+		<pubDate>Tue, 02 Apr 2013 17:22:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/mp">мониторы, проекторы, ТВ-тюнеры, телевизоры</category>
+	</item>
+	<item>
+		<title>3DNews Daily, выпуск #27: Видеоновости за день</title>
+		<link>http://www.3dnews.ru/news/643629/</link>
+		<guid>http://www.3dnews.ru/news/643629/#643629</guid>
+		<description><![CDATA[<img align="left" hspace="15" vspace="10" src="http://www.3dnews.ru/images/rss_icons/rss_hardware_blue2.jpg" border="0" height="85" width="120"/>В этом выпуске: Eidos Motnreal выпустила в свет трейлер игры Thief: Out of The Shadows; Робот Фриц на основе аппаратной платформы Ардуино может легко произносить текст; NASA начинает открытый конкурс на доработку уже существующего прототипа робота-андроида Robonaut; NVIDIA выпустила пять новых графических контроллеров мобильной серии 700M; в Сети появился второй трейлер мультфильма Железный Человек: Восстание Техновора]]></description>
+		<pubDate>Tue, 02 Apr 2013 17:15:00 +0400</pubDate>
+		<category domain="http://www.3dnews.ru/comment">комментарии последних событий</category>
+		<category domain="http://www.3dnews.ru/dphoto">фото, видео, фраза дня</category>
+	</item>
+   </channel>
+</rss>
