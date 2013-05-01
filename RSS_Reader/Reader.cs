@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Data.Objects;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Xml;
-using RssReader;
+using RssReader.RssParser;
 
 namespace RssReader
 {
-	class Reader
+	internal class Reader
 	{
-		private BdEntities data;
+		private const string dateTimeFormat = "ddd, dd MMM yyyy HH:mm:ss zzz";
+		private readonly BdEntities data;
 		private bool downloadSite = true;
-		private bool downloadVideo = false;
-		const string dateTimeFormat = "ddd, dd MMM yyyy HH:mm:ss zzz";
+		private bool downloadVideo;
+
+		public Reader(string connectionString)
+		{
+			data = new BdEntities(connectionString);
+		}
+
+		public Reader()
+		{
+			data = new BdEntities();
+		}
 
 		public bool DownloadSite
 		{
@@ -34,19 +42,9 @@ namespace RssReader
 		{
 			get
 			{
-				System.Data.Objects.ObjectQuery<Chanal> chanalsQuery = this.GetChanalsQuery(data);
-				return chanalsQuery.Execute(System.Data.Objects.MergeOption.AppendOnly);
+				ObjectQuery<Chanal> chanalsQuery = GetChanalsQuery(data);
+				return chanalsQuery.Execute(MergeOption.AppendOnly);
 			}
-		}
-
-		public Reader(string connectionString)
-		{
-			data = new BdEntities(connectionString);
-		}
-
-		public Reader()
-		{
-			data = new BdEntities();
 		}
 
 		public void DeleteChanal(Chanal ch)
@@ -59,9 +57,9 @@ namespace RssReader
 			data.SaveChanges();
 		}
 
-		private System.Data.Objects.ObjectQuery<Chanal> GetChanalsQuery(BdEntities bdEntities)
+		private ObjectQuery<Chanal> GetChanalsQuery(BdEntities bdEntities)
 		{
-			System.Data.Objects.ObjectQuery<Chanal> chanalsQuery = bdEntities.Chanals;
+			ObjectQuery<Chanal> chanalsQuery = bdEntities.Chanals;
 			// Update the query to include Articls data in Chanals. You can modify this code as needed.
 			chanalsQuery = chanalsQuery.Include("Articls");
 			//chanalsQuery.Select((x) => x).OrderByDescending((o) => o.PubDate);
@@ -80,7 +78,7 @@ namespace RssReader
 
 		public void UpdateChanals()
 		{
-			foreach (var chanal in data.Chanals)
+			foreach (Chanal chanal in data.Chanals)
 			{
 				FillChanal(chanal);
 			}
@@ -88,72 +86,36 @@ namespace RssReader
 
 		public void FillChanal(Chanal ch)
 		{
-			XmlDocument document = new XmlDocument();
-			document.Load(ch.Source);
-			FillChanal(ch, (XmlElement)document.DocumentElement.ChildNodes[0]);
-		}
+			if (ch == null)
+				throw new ArgumentNullException("ch");
+			RssParser.Chanal channel = RSSParser.Parse(ch.Source);
+			ch.Title = channel.Title;
+			ch.Description = channel.Description;
+			ch.PubDate = channel.PubDate;
 
-		private bool FillChanal(Chanal ch, XmlElement element)
-		{
-			if (element.Name != "channel")
-				return false;
-			List<Articl> tempList = new List<Articl>();
-			foreach (XmlElement xmlElement in element.ChildNodes)
-			{
-				if (xmlElement.Name == "item")
-				{
-					Articl art = new Articl();
-					art.Readed = false;
-					if (FillArticl(art, xmlElement))
-					{
-						tempList.Add(art);
-					}
-				}
-				if (xmlElement.Name == "title")
-					ch.Title = xmlElement.InnerText;
-				if (xmlElement.Name == "description")
-					ch.Description = RemoveHTML(xmlElement.InnerText);
-				if (xmlElement.Name.ToLower() == "pubdate")
-					ch.PubDate = DateTime.ParseExact(xmlElement.InnerText, dateTimeFormat, CultureInfo.InvariantCulture); 
-			}
-			DateTime maxDateTime = new DateTime();
+			var lastTime = new DateTime();
 			if (ch.Articls.Count > 0)
-				maxDateTime = ch.Articls.Max(d => d.PubDate);
-			foreach (var tempArt in tempList.Where(ar=>ar.PubDate > maxDateTime).OrderByDescending(x=>x.PubDate))
+				lastTime = ch.Articls.Max(x => x.PubDate);
+			foreach (Item item in channel.Items.Where(x => x.PubDate > lastTime).OrderByDescending(x => x.PubDate))
 			{
-				ch.Articls.Add(tempArt);
+				var art = new Articl
+					{
+						Title = item.Title,
+						Description = RemoveHtml(item.Description),
+						Link = item.Link,
+						Source = item.Link,
+						PubDate = item.PubDate
+					};
+				ch.Articls.Add(art);
 				if (DownloadSite)
-					DownloadHtml(Directory.GetCurrentDirectory(), tempArt);
+					DownloadHtml(Directory.GetCurrentDirectory(), art);
 			}
-			return true;
 		}
 
-		private bool FillArticl(Articl art, XmlElement element)
-		{
-			if (element.Name != "item")
-				return false;
-			foreach (XmlElement child in element.ChildNodes)
-			{
-				if (child.Name == "title")
-					art.Title = child.InnerText;
-				if (child.Name == "description")
-					art.Description = RemoveHTML(child.InnerText);
-				if (child.Name == "link")
-				{
-					art.Link = child.InnerText;
-					art.Source = art.Link;
-				}
-				if (child.Name.ToLower() == "pubdate")
-				{
-					art.PubDate = DateTime.ParseExact(child.InnerText, dateTimeFormat, CultureInfo.InvariantCulture);
-				}
-			}
-			return true;
-		}
 
-		static public string RemoveHTML(string strHTML)
+		public static string RemoveHtml(string strHtml)
 		{
-			return Regex.Replace(strHTML, "<(.|\n)*?>", "");
+			return Regex.Replace(strHtml, "<(.|\n)*?>", "");
 		}
 
 		public void DownloadHtml(string pathToDirectory, Articl art)
@@ -166,20 +128,19 @@ namespace RssReader
 				return;
 			}
 			art.Source = pathFile;
-			WebClient client = new WebClient();
-			string randFileName = Path.GetRandomFileName();
+			var client = new WebClient();
 			if (!Directory.Exists(pathToDirectory))
 				Directory.CreateDirectory(pathToDirectory);
 			client.DownloadFileCompleted += (sender, args) =>
 				{
 					string allText = File.ReadAllText(art.Source);
-				//	allText = Regex.Replace(allText, @"<script.*?</script>", "", RegexOptions.Singleline);
-					var stream = File.CreateText(art.Source);
+					//	allText = Regex.Replace(allText, @"<script.*?</script>", "", RegexOptions.Singleline);
+					StreamWriter stream = File.CreateText(art.Source);
 					stream.Write(allText);
 					stream.Close();
 				};
 			client.DownloadFileAsync(new Uri(art.Link), art.Source);
-			
+
 			//HtmlDocument doc = new HtmlDocument();
 			//doc.Load("file.htm");
 			//foreach(var linkNode in doc.DocumentNode.SelectNodes("//a[@href]"))

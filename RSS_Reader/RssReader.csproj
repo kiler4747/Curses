@@ -8,8 +8,8 @@
     <ProjectGuid>{2030276A-3986-4C9F-B50E-D75B5292CC55}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>testEF</RootNamespace>
-    <AssemblyName>testEF</AssemblyName>
+    <RootNamespace>RssReader</RootNamespace>
+    <AssemblyName>RssReader</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -42,7 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,17 +50,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -76,6 +81,11 @@
     <Compile Include="Chanal.cs" />
     <Compile Include="conv.cs" />
     <Compile Include="Reader.cs" />
+    <Compile Include="RssParser\Chanal.cs" />
+    <Compile Include="RssParser\Item.cs" />
+    <Compile Include="RssParser\Node.cs" />
+    <Compile Include="RssParser\RSSParser.cs" />
+    <Compile Include="RssParser\Tags.cs" />
     <Page Include="AddChanalDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,9 +132,9 @@
     <EntityDeploy Include="BDModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BDModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>RssReader</CustomToolNamespace>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\RssReader.tempdbEntities.datasource" />
     <None Include="Properties\DataSources\tempdbEntities.datasource" />
     <None Include="Properties\Settings.settings">

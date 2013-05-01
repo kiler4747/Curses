@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="tempdbEntities" Identifier="RssReader.tempdbEntities" ProviderType="Microsoft.VisualStudio.DataDesign.DataSourceProviders.EntityDataModel.EdmDataSourceProvider" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>RssReader.tempdbEntities, Model1.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+<GenericObjectDataSource DisplayName="tempdbEntities" Identifier="RssReader.BDEntities" ProviderType="Microsoft.VisualStudio.DataDesign.DataSourceProviders.EntityDataModel.EdmDataSourceProvider" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>RssReader.BDEntities, Model1.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

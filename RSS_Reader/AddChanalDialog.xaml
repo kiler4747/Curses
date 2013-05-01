@@ -1,8 +1,9 @@
 ﻿<Window x:Class="RssReader.AddChanalDialog"
-		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		Title="AddChanalDialog" Topmost="True" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="ToolWindow">
-	<DockPanel >
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddChanalDialog" Topmost="True" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False" WindowStyle="ToolWindow">
+	<DockPanel>
 		<TextBox x:Name="tbSource" DockPanel.Dock="Top" Text="http://www.3dnews.ru/news/rss" />
 		<Button Content="OK" VerticalAlignment="Top" IsDefault="True" Click="Button_Click_1" />
 		<Button Content="Cancel" VerticalAlignment="Top" />

@@ -19,7 +19,7 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("BDModel", "FK_Articls_Chanals", "Chanal", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RssReader.Chanal), "Articl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RssReader.Articl), true)]
+[assembly: EdmRelationshipAttribute("RssReader", "FK_Articls_Chanals", "Chanal", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RssReader.Chanal), "Articl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RssReader.Articl), true)]
 
 #endregion
 
@@ -158,7 +158,7 @@ namespace RssReader
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="BDModel", Name="Articl")]
+    [EdmEntityTypeAttribute(NamespaceName="RssReader", Name="Articl")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Articl : EntityObject
@@ -396,16 +396,16 @@ namespace RssReader
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BDModel", "FK_Articls_Chanals", "Chanal")]
+        [EdmRelationshipNavigationPropertyAttribute("RssReader", "FK_Articls_Chanals", "Chanal")]
         public Chanal Chanal
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("BDModel.FK_Articls_Chanals", "Chanal").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("RssReader.FK_Articls_Chanals", "Chanal").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("BDModel.FK_Articls_Chanals", "Chanal").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("RssReader.FK_Articls_Chanals", "Chanal").Value = value;
             }
         }
         /// <summary>
@@ -417,13 +417,13 @@ namespace RssReader
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("BDModel.FK_Articls_Chanals", "Chanal");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Chanal>("RssReader.FK_Articls_Chanals", "Chanal");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Chanal>("BDModel.FK_Articls_Chanals", "Chanal", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Chanal>("RssReader.FK_Articls_Chanals", "Chanal", value);
                 }
             }
         }
@@ -435,7 +435,7 @@ namespace RssReader
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="BDModel", Name="Chanal")]
+    [EdmEntityTypeAttribute(NamespaceName="RssReader", Name="Chanal")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Chanal : EntityObject
@@ -597,18 +597,18 @@ namespace RssReader
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BDModel", "FK_Articls_Chanals", "Articl")]
+        [EdmRelationshipNavigationPropertyAttribute("RssReader", "FK_Articls_Chanals", "Articl")]
         public EntityCollection<Articl> Articls
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Articl>("BDModel.FK_Articls_Chanals", "Articl");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Articl>("RssReader.FK_Articls_Chanals", "Articl");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Articl>("BDModel.FK_Articls_Chanals", "Articl", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Articl>("RssReader.FK_Articls_Chanals", "Articl", value);
                 }
             }
         }
@@ -620,7 +620,7 @@ namespace RssReader
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="BDModel", Name="sysdiagram")]
+    [EdmEntityTypeAttribute(NamespaceName="RssReader", Name="sysdiagram")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class sysdiagram : EntityObject
