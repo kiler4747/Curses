@@ -1,0 +1,107 @@
+﻿<Window x:Class="RssReader.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="MainWindow" Height="350" Width="525"  mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:testEf="clr-namespace:RssReader" xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+		Loaded="Window_Loaded_1">
+	<Window.Resources>
+		<testEf:ConverConverter x:Key="ItemConverter"/>
+
+		<GroupStyle x:Key="Group">
+			<GroupStyle.ContainerStyle>
+				<Style TargetType="{x:Type GroupItem}">
+					<Setter Property="Margin" Value="0,0,0,5"/>
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate>
+								<Expander IsExpanded="True" BorderBrush="#FFA4B97F" BorderThickness="0,0,0,1">
+									<Expander.Header>
+										<DockPanel>
+											<TextBlock FontWeight="Bold" Text="{Binding NotReadedArticlsCount}" Margin="5,0,0,0" />
+											<TextBlock FontWeight="Bold" Text="{Binding ItemCount}" />
+										</DockPanel>
+									</Expander.Header>
+									<Expander.Content>
+										<ItemsPresenter/>
+									</Expander.Content>
+								</Expander>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</GroupStyle.ContainerStyle>
+		</GroupStyle>
+		<DataTemplate x:Key="ListBoxNews">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="{Binding Path=Title}" FontWeight="Bold" FontSize="14"/>
+				<TextBlock Grid.Row="1" TextWrapping="Wrap" MaxWidth="500" HorizontalAlignment="Left">
+					<TextBlock Text="{Binding Path=Description}" MaxWidth="500" TextWrapping="Wrap"></TextBlock>
+					<TextBlock Text="{Binding Path=PubDate}" MaxWidth="500" TextWrapping="Wrap"></TextBlock>
+					<Hyperlink TargetName="http://www.3dnews.ru/news/rss"></Hyperlink>
+				</TextBlock>
+			</Grid>
+			<DataTemplate.Triggers>
+				<DataTrigger Binding="{Binding Path=Readed}" Value="True">
+					<Setter Property="TextBlock.Foreground" Value="#FFA4A4A4"></Setter>
+				</DataTrigger>
+			</DataTemplate.Triggers>
+		</DataTemplate>
+		<CollectionViewSource x:Key="chanalsViewSource" d:DesignSource="{d:DesignInstance testEf:Chanal, CreateList=True}" />
+		<CollectionViewSource x:Key="chanalsArticlsViewSource" Source="{Binding Path=Articls, Source={StaticResource chanalsViewSource}}" >
+			<CollectionViewSource.GroupDescriptions>
+				<PropertyGroupDescription PropertyName="PubDate.Day"/>
+			</CollectionViewSource.GroupDescriptions>
+
+		</CollectionViewSource>
+	</Window.Resources>
+
+	<Grid DataContext="{StaticResource chanalsArticlsViewSource}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<DockPanel  Grid.Column="0">
+			<Grid DockPanel.Dock="Bottom">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Content="Button" Height="23"  Name="Add" VerticalAlignment="Top" Click="button1_Click_1" />
+				<Button Grid.Column="1" Content="Button" Height="23"  Name="Remove" VerticalAlignment="Top" Click="Remove_Click" />
+			</Grid>
+			<ListView  ItemsSource="{Binding Source={StaticResource chanalsViewSource}}" Name="chanalsListView" SelectedValuePath="IdChanal" SelectionMode="Single" PreviewMouseDoubleClick="chanalsListView_PreviewMouseDoubleClick">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<DockPanel>
+							<TextBlock Text="{Binding Title}"/>
+							<TextBlock Text=" ("/>
+							<TextBlock Text="{Binding NotReadedArticlsCount}"/>
+							<TextBlock Text=" / "/>
+							<TextBlock Text="{Binding Articls.Count}"/>
+							<TextBlock Text=")"/>
+						</DockPanel>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</DockPanel>
+		<ListBox Grid.Column="1" ItemTemplate="{StaticResource ListBoxNews}"  ItemsSource="{Binding}" Name="lbArticlsListView" SelectionMode="Single" SelectionChanged="articlsListView_SelectionChanged" PreviewMouseDoubleClick="articlsListView_PreviewMouseDoubleClick">
+			<ListBox.GroupStyle>
+				<StaticResource ResourceKey="Group"/>
+			</ListBox.GroupStyle>
+		</ListBox>
+		<DockPanel Name="dpBrowserPanel" Grid.Column="1" Visibility="Collapsed">
+			<DockPanel DockPanel.Dock="Top">
+				<Button Content="Home"/>
+				<Button Content="&lt;"/>
+				<Button Content="&gt;"/>
+				<Button Content="Update"/>
+				<TextBox Name="tbUri" Text="{Binding ElementName=wbInternalWebBrowser, Path=Source}" />
+			</DockPanel>
+			<WebBrowser Name="wbInternalWebBrowser"  />
+		</DockPanel>
+	</Grid>
+</Window>
